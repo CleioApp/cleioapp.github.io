@@ -218,7 +218,7 @@ body {
   h1 {
     font-size: 1.875rem;
     font-weight: 800;
-    color: $brand-primary;
+    color: #0f172a;                  // slate-900 — 격식·무게감
     margin-top: 0;
     padding-bottom: 0.75rem;
     border-bottom: 2px solid $border-light;
@@ -226,7 +226,7 @@ body {
 
   h2 {
     font-size: 1.4rem;
-    color: $brand-primary;
+    color: $brand-secondary;         // 헤더 그라디언트 끝점과 호응
     font-weight: 700;
     margin-top: 3rem;
     padding-top: 0.5rem;
@@ -549,9 +549,13 @@ body {
   .main-content {
     color: $text-primary-dark;
 
-    h1, h2 {
-      color: $brand-primary-dark;
+    h1 {
+      color: #f1f5f9;                // slate-100
       border-bottom-color: $border-dark;
+    }
+
+    h2 {
+      color: $brand-secondary-dark;
     }
 
     h3, h4, h5, h6 {
