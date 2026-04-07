@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cleio Legal
+description: Cleio iOS 앱의 이용약관 및 개인정보처리방침
 permalink: /
 ---
 

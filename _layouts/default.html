@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'ko-KR' }}">
   <head>
     <meta charset="UTF-8">
-
-{% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
-    <meta name="theme-color" content="#0088FF">
+    <meta name="theme-color" content="#0088FF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0066cc" media="(prefers-color-scheme: dark)">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    {% seo %}
+
+    <!-- Pretendard 한글 최적화 폰트 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
@@ -16,18 +20,95 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <div class="header-inner">
+        <div class="header-text">
+          <a href="{{ '/' | relative_url }}" class="brand-link">
+            <span class="brand-mark">Cleio</span>
+            <span class="brand-divider">·</span>
+            <span class="brand-tag">Legal</span>
+          </a>
+          <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+          {% if page.description or site.description %}
+            <p class="project-tagline">{{ page.description | default: site.description }}</p>
+          {% endif %}
+        </div>
+
+        {% if page.alt_url %}
+          <nav class="lang-switch" aria-label="Language">
+            <a href="{{ page.alt_url | relative_url }}" rel="alternate" hreflang="{% if page.lang == 'ko' %}en{% else %}ko{% endif %}">
+              {{ page.alt_label }}
+            </a>
+          </nav>
+        {% endif %}
+      </div>
     </header>
 
     <main id="content" class="main-content" role="main">
       {{ content }}
 
       <footer class="site-footer">
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
+        <div class="footer-grid">
+          <div class="footer-col">
+            <strong class="footer-title">Cleio Legal</strong>
+            <p class="footer-desc">Cleio iOS 앱의 이용약관 및 개인정보처리방침</p>
+          </div>
+          <div class="footer-col">
+            <strong class="footer-title">문서</strong>
+            <ul class="footer-links">
+              <li><a href="{{ '/privacy-policy/' | relative_url }}">개인정보처리방침</a></li>
+              <li><a href="{{ '/terms-of-service/' | relative_url }}">이용약관</a></li>
+              <li><a href="{{ '/privacy-policy-en/' | relative_url }}">Privacy Policy (EN)</a></li>
+              <li><a href="{{ '/terms-of-service-en/' | relative_url }}">Terms of Service (EN)</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <strong class="footer-title">문의</strong>
+            <ul class="footer-links">
+              <li><a href="mailto:kdwara@icloud.com">kdwara@icloud.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Cleio · 이기대 (Kidae Lee)</span>
+        </div>
       </footer>
     </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="맨 위로" hidden>↑</button>
+
+    <script>
+      // 1) 헤딩 앵커 링크 자동 추가 (h2/h3, kramdown auto_ids 전제)
+      document.querySelectorAll('.main-content h2[id], .main-content h3[id]').forEach(function(h) {
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.className = 'anchor-link';
+        a.setAttribute('aria-label', '이 섹션 링크');
+        a.textContent = '#';
+        h.appendChild(a);
+      });
+
+      // 2) 본문 첫 blockquote → metadata-card 클래스 (메타 정보 카드화)
+      var firstBlock = document.querySelector('.main-content > blockquote:first-of-type');
+      if (firstBlock) {
+        var prev = firstBlock.previousElementSibling;
+        if (!prev || prev.tagName === 'H1') {
+          firstBlock.classList.add('metadata-card');
+        }
+      }
+
+      // 3) Back-to-top 표시/숨김
+      var btn = document.getElementById('back-to-top');
+      if (btn) {
+        var toggle = function() {
+          if (window.scrollY > 600) { btn.hidden = false; }
+          else { btn.hidden = true; }
+        };
+        window.addEventListener('scroll', toggle, { passive: true });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggle();
+      }
+    </script>
   </body>
 </html>

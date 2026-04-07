@@ -3,6 +3,8 @@ layout: default
 title: 이용약관
 permalink: /terms-of-service/
 lang: ko
+alt_url: /terms-of-service-en/
+alt_label: English
 ---
 
 

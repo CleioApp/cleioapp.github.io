@@ -3,6 +3,8 @@ layout: default
 title: Privacy Policy
 permalink: /privacy-policy-en/
 lang: en
+alt_url: /privacy-policy/
+alt_label: 한국어
 ---
 
 

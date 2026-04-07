@@ -1,32 +1,787 @@
 ---
 ---
 
-// Cleio 브랜드 색상 (DSColor.brandPrimary / brandSecondary)
-$header-bg-color: #0088FF;
-$header-bg-color-secondary: #5856D6;
-$section-headings-color: #0088FF;
-$body-link-color: #0088FF;
+// =====================================================================
+// Cleio Legal — 디자인 토큰 (Cleio 앱 DesignSystem 1:1 매칭)
+// =====================================================================
 
+// Brand Colors (DSColor.brandPrimary / brandSecondary)
+$brand-primary: #0088FF;
+$brand-secondary: #5856D6;
+$brand-primary-dark: #4DA9FF;     // 다크모드용 라이트 톤
+$brand-secondary-dark: #8B89E8;
+
+// Light theme
+$bg: #ffffff;
+$text-primary: #1c1c1e;
+$text-secondary: #6e6e73;
+$text-tertiary: #8e8e93;
+$border: #e5e5ea;
+$border-light: #f2f2f7;
+$card-bg: #f8f9fc;
+$card-border: #e8eaf2;
+
+// Dark theme
+$bg-dark: #0d0d0f;
+$text-primary-dark: #f5f5f7;
+$text-secondary-dark: #aeaeb2;
+$text-tertiary-dark: #8e8e93;
+$border-dark: #2c2c2e;
+$border-light-dark: #1c1c1e;
+$card-bg-dark: #1c1c1e;
+$card-border-dark: #2c2c2e;
+
+// Cayman SCSS 변수 오버라이드 (import 전)
+$header-bg-color: $brand-primary;
+$header-bg-color-secondary: $brand-secondary;
+$section-headings-color: $brand-primary;
+$body-link-color: $brand-primary;
+
+// Cayman 테마 베이스 import
 @import "{{ site.theme }}";
 
-// Cayman 테마 import 후 추가 오버라이드 (기본값에 !default가 없는 항목 대응)
+// =====================================================================
+// 글로벌 폰트 — Pretendard (한글 최적화)
+// =====================================================================
+
+$font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+            'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
+$font-mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+body {
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.75;          // 한글 최적
+  letter-spacing: -0.01em;
+  color: $text-primary;
+  background-color: $bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: keep-all;       // 한글 단어 단위 줄바꿈
+  overflow-wrap: break-word;
+}
+
+// =====================================================================
+// Page Header — 슬림화 + 좌측 정렬 + 브랜드 + 언어 스위처
+// =====================================================================
+
 .page-header {
-  background-color: #0088FF;
-  background-image: linear-gradient(120deg, #0088FF, #5856D6);
-  // iOS notch / Dynamic Island 안전 영역까지 그라디언트 확장
-  padding-top: calc(2rem + env(safe-area-inset-top));
+  background-color: $brand-primary;
+  background-image: linear-gradient(120deg, $brand-primary 0%, $brand-secondary 100%);
+  padding: calc(2.5rem + env(safe-area-inset-top)) 1.5rem 2.5rem;
+  text-align: left;
+  color: #fff;
+
+  @media screen and (min-width: 42em) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  @media screen and (min-width: 64em) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .header-inner {
+    max-width: 56rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .header-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .brand-divider {
+      opacity: 0.5;
+    }
+
+    .brand-tag {
+      font-weight: 500;
+    }
+  }
+
+  .project-name {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: #fff;
+
+    @media screen and (min-width: 42em) {
+      font-size: 2rem;
+    }
+    @media screen and (min-width: 64em) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .project-tagline {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+
+    @media screen and (min-width: 42em) {
+      font-size: 1rem;
+    }
+  }
+
+  .lang-switch {
+    flex-shrink: 0;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.4);
+        text-decoration: none;
+      }
+    }
+  }
 }
 
-.main-content a,
-.main-content a:visited {
-  color: #0088FF;
+// =====================================================================
+// Main Content — 본문 최적 폭, 한글 가독성
+// =====================================================================
+
+.main-content {
+  max-width: 48rem;
+  padding: 2.5rem 1.5rem 4rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: $text-primary;
+  word-break: keep-all;
+
+  @media screen and (min-width: 42em) {
+    padding: 3rem 2rem 5rem;
+    font-size: 1.0625rem;
+  }
+  @media screen and (min-width: 64em) {
+    padding: 3.5rem 2rem 5rem;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  // 헤딩 계층 강화
+  h1, h2, h3, h4, h5, h6 {
+    color: $text-primary;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 2rem;        // 앵커 점프 시 헤딩이 잘리지 않도록
+    position: relative;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: $brand-primary;
+    margin-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid $border-light;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: $brand-primary;
+    font-weight: 700;
+    margin-top: 3rem;
+    padding-top: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    color: $text-primary;
+    font-weight: 600;
+    margin-top: 2rem;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    color: $text-primary;
+    font-weight: 600;
+  }
+
+  // 헤딩 앵커 링크
+  .anchor-link {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: $text-tertiary;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+  }
+
+  h2:hover .anchor-link,
+  h3:hover .anchor-link,
+  h4:hover .anchor-link {
+    opacity: 1;
+  }
+
+  // Body
+  p {
+    margin: 0 0 1.25rem;
+    color: $text-primary;
+  }
+
+  a {
+    color: $brand-primary;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom-color: $brand-primary;
+    }
+  }
+
+  ul, ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  // 메타 정보 카드 (본문 최상단 blockquote → 카드)
+  .metadata-card {
+    margin: 1.5rem 0 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background-color: $card-bg;
+    border: 1px solid $card-border;
+    border-left: 4px solid $brand-primary;
+    border-radius: 0.5rem;
+    color: $text-primary;
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    p {
+      margin: 0.25rem 0;
+    }
+
+    strong {
+      color: $brand-primary;
+      font-weight: 600;
+    }
+  }
+
+  // 일반 blockquote (metadata-card 제외)
+  blockquote:not(.metadata-card) {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.25rem;
+    border-left: 3px solid $brand-secondary;
+    background-color: rgba($brand-secondary, 0.04);
+    border-radius: 0 0.375rem 0.375rem 0;
+    color: $text-secondary;
+
+    p {
+      margin: 0.5rem 0;
+      color: $text-secondary;
+    }
+
+    strong {
+      color: $text-primary;
+    }
+  }
+
+  // 테이블
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border: 1px solid $border;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    -webkit-overflow-scrolling: touch;
+
+    th {
+      background-color: $card-bg;
+      font-weight: 600;
+      color: $text-primary;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid $border;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid $border-light;
+      color: $text-primary;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  // 코드
+  code {
+    padding: 0.15rem 0.4rem;
+    font-family: $font-mono;
+    font-size: 0.9em;
+    background-color: $card-bg;
+    border: 1px solid $border-light;
+    border-radius: 0.25rem;
+    color: $brand-primary;
+  }
+
+  pre {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: $card-bg;
+    border: 1px solid $border;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-family: $font-mono;
+    font-size: 0.85rem;
+    line-height: 1.6;
+
+    code {
+      padding: 0;
+      background: none;
+      border: none;
+      color: $text-primary;
+    }
+  }
+
+  // hr
+  hr {
+    height: 1px;
+    margin: 3rem 0;
+    background-color: $border;
+    border: none;
+  }
 }
 
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4,
-.main-content h5,
-.main-content h6 {
-  color: #0088FF;
+// =====================================================================
+// Footer — 강화된 푸터
+// =====================================================================
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid $border;
+  font-size: 0.9rem;
+  color: $text-secondary;
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 42em) {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+
+  .footer-col {
+    .footer-title {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: $text-primary;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-desc {
+      margin: 0;
+      color: $text-secondary;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        color: $text-secondary;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.15s ease;
+
+        &:hover {
+          color: $brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid $border-light;
+    color: $text-tertiary;
+    font-size: 0.85rem;
+  }
+}
+
+.site-footer-owner,
+.site-footer-credits {
+  display: none;       // Cayman 기본 푸터 제거
+}
+
+// =====================================================================
+// Back to Top
+// =====================================================================
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: $brand-primary;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba($brand-primary, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  z-index: 100;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba($brand-primary, 0.45);
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// =====================================================================
+// Skip to content (접근성)
+// =====================================================================
+
+#skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: $brand-primary;
+  color: #fff;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  z-index: 1000;
+
+  &:focus {
+    top: 1rem;
+  }
+}
+
+// =====================================================================
+// 다크 모드 (prefers-color-scheme)
+// =====================================================================
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $bg-dark;
+    color: $text-primary-dark;
+  }
+
+  .page-header {
+    // 다크모드에서도 그라디언트 유지하되 살짝 톤 다운
+    background-image: linear-gradient(120deg, #0066cc 0%, #4441a8 100%);
+  }
+
+  .main-content {
+    color: $text-primary-dark;
+
+    h1, h2 {
+      color: $brand-primary-dark;
+      border-bottom-color: $border-dark;
+    }
+
+    h3, h4, h5, h6 {
+      color: $text-primary-dark;
+    }
+
+    p, li {
+      color: $text-primary-dark;
+    }
+
+    a {
+      color: $brand-primary-dark;
+
+      &:hover {
+        border-bottom-color: $brand-primary-dark;
+      }
+    }
+
+    .anchor-link {
+      color: $text-tertiary-dark;
+
+      &:hover {
+        color: $brand-primary-dark;
+      }
+    }
+
+    .metadata-card {
+      background-color: $card-bg-dark;
+      border-color: $card-border-dark;
+      border-left-color: $brand-primary-dark;
+      color: $text-primary-dark;
+
+      strong {
+        color: $brand-primary-dark;
+      }
+    }
+
+    blockquote:not(.metadata-card) {
+      background-color: rgba($brand-secondary-dark, 0.08);
+      border-left-color: $brand-secondary-dark;
+      color: $text-secondary-dark;
+
+      p {
+        color: $text-secondary-dark;
+      }
+
+      strong {
+        color: $text-primary-dark;
+      }
+    }
+
+    table {
+      border-color: $border-dark;
+
+      th {
+        background-color: $card-bg-dark;
+        color: $text-primary-dark;
+        border-bottom-color: $border-dark;
+      }
+
+      td {
+        color: $text-primary-dark;
+        border-bottom-color: $border-light-dark;
+      }
+    }
+
+    code {
+      background-color: $card-bg-dark;
+      border-color: $border-dark;
+      color: $brand-primary-dark;
+    }
+
+    pre {
+      background-color: $card-bg-dark;
+      border-color: $border-dark;
+
+      code {
+        color: $text-primary-dark;
+      }
+    }
+
+    hr {
+      background-color: $border-dark;
+    }
+  }
+
+  .site-footer {
+    border-top-color: $border-dark;
+    color: $text-secondary-dark;
+
+    .footer-col {
+      .footer-title {
+        color: $text-primary-dark;
+      }
+
+      .footer-desc {
+        color: $text-secondary-dark;
+      }
+
+      .footer-links a {
+        color: $text-secondary-dark;
+
+        &:hover {
+          color: $brand-primary-dark;
+        }
+      }
+    }
+
+    .footer-bottom {
+      border-top-color: $border-light-dark;
+      color: $text-tertiary-dark;
+    }
+  }
+
+  .back-to-top {
+    background-color: $brand-primary-dark;
+    box-shadow: 0 4px 12px rgba($brand-primary-dark, 0.35);
+  }
+}
+
+// =====================================================================
+// 인쇄 스타일시트
+// =====================================================================
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .page-header {
+    background: none !important;
+    color: #000;
+    padding: 0 0 1rem;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1.5rem;
+
+    .brand-link,
+    .lang-switch {
+      display: none;
+    }
+
+    .project-name {
+      color: #000;
+      font-size: 18pt;
+    }
+
+    .project-tagline {
+      color: #333;
+      font-size: 11pt;
+    }
+  }
+
+  .main-content {
+    max-width: none;
+    padding: 0;
+    font-size: 11pt;
+    color: #000;
+
+    h1, h2, h3, h4 {
+      color: #000;
+      page-break-after: avoid;
+      border-bottom: none;
+    }
+
+    h2 {
+      border-bottom: 1px solid #999;
+      padding-bottom: 0.25rem;
+    }
+
+    a {
+      color: #000;
+      text-decoration: underline;
+      border-bottom: none;
+    }
+
+    .anchor-link {
+      display: none;
+    }
+
+    .metadata-card {
+      background: #f5f5f5;
+      border: 1px solid #999;
+      border-left: 3px solid #000;
+      color: #000;
+    }
+
+    blockquote {
+      background: #f8f8f8;
+      border-left: 2px solid #666;
+      color: #333;
+    }
+
+    table {
+      border-color: #000;
+
+      th, td {
+        border-color: #999;
+      }
+    }
+
+    pre, code {
+      background: #f5f5f5;
+      color: #000;
+      border-color: #999;
+    }
+  }
+
+  .site-footer {
+    border-top: 1px solid #000;
+    color: #333;
+
+    .footer-grid {
+      display: block;
+    }
+
+    .footer-col {
+      margin-bottom: 1rem;
+
+      .footer-title,
+      .footer-links a {
+        color: #000;
+      }
+    }
+  }
+
+  .back-to-top,
+  #skip-to-content {
+    display: none !important;
+  }
 }
