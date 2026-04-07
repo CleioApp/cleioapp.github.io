@@ -14,6 +14,7 @@ This site hosts the Terms of Service and Privacy Policy for the Cleio iOS app.
 
 - [개인정보처리방침]({{ site.baseurl }}/privacy-policy/)
 - [이용약관]({{ site.baseurl }}/terms-of-service/)
+- [고객 지원 / Support]({{ site.baseurl }}/support/)
 
 ## English (Translation)
 
