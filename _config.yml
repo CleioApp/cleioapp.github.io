@@ -1,0 +1,28 @@
+title: Cleio Legal
+description: Cleio 이용약관 및 개인정보처리방침
+theme: jekyll-theme-cayman
+
+# 한국어 정본
+lang: ko-KR
+
+# 사이트 URL
+url: "https://cleioapp.github.io"
+baseurl: ""
+
+# 마크다운 파서
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# 빌드 제외
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .DS_Store
+
+# 클린 URL (확장자 없는 경로)
+permalink: /:title/

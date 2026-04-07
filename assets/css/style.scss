@@ -1,0 +1,32 @@
+---
+---
+
+// Cleio 브랜드 색상 (DSColor.brandPrimary / brandSecondary)
+$header-bg-color: #0088FF;
+$header-bg-color-secondary: #5856D6;
+$section-headings-color: #0088FF;
+$body-link-color: #0088FF;
+
+@import "{{ site.theme }}";
+
+// Cayman 테마 import 후 추가 오버라이드 (기본값에 !default가 없는 항목 대응)
+.page-header {
+  background-color: #0088FF;
+  background-image: linear-gradient(120deg, #0088FF, #5856D6);
+  // iOS notch / Dynamic Island 안전 영역까지 그라디언트 확장
+  padding-top: calc(2rem + env(safe-area-inset-top));
+}
+
+.main-content a,
+.main-content a:visited {
+  color: #0088FF;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: #0088FF;
+}
