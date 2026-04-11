@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0088FF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0066cc" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>Cleio — 똑똑한 음성 녹음</title>
+  <meta name="description" content="녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지. Cleio와 함께 회의에 집중하세요.">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cleio — 똑똑한 음성 녹음">
+  <meta property="og:description" content="녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cleioapp.github.io">
+
+  <!-- Pretendard -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 22px; font-weight: 700; color: #0088FF;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 8px; align-items: center; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: #666;
+      padding: 6px 12px; border-radius: 8px; transition: all 0.2s;
+    }
+    .nav-links a:hover { color: #0088FF; background: rgba(0,136,255,0.06); }
+    .nav-links a.active { color: #0088FF; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: linear-gradient(180deg, #f0f7ff 0%, #fff 100%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 20px;
+      background: rgba(0,136,255,0.08); color: #0088FF;
+      font-size: 13px; font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 800; line-height: 1.2;
+      letter-spacing: -1px; color: #111;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #0088FF; }
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #666; max-width: 520px; margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .app-store-badge {
+      display: inline-block; transition: transform 0.2s;
+    }
+    .app-store-badge:hover { transform: scale(1.05); }
+    .app-store-badge img { height: 54px; }
+
+    /* ── Screenshots ── */
+    .screenshots {
+      padding: 80px 24px;
+      background: #fafbfc;
+    }
+    .section-header {
+      text-align: center; margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700; letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      font-size: 16px; color: #888;
+    }
+
+    /* Language tabs */
+    .lang-tabs {
+      display: flex; justify-content: center; gap: 4px;
+      margin-bottom: 40px;
+    }
+    .lang-tab {
+      padding: 8px 20px; border-radius: 20px;
+      font-size: 14px; font-weight: 600;
+      background: transparent; border: 1.5px solid #e0e0e0;
+      color: #888; cursor: pointer; transition: all 0.2s;
+    }
+    .lang-tab:hover { border-color: #0088FF; color: #0088FF; }
+    .lang-tab.active {
+      background: #0088FF; border-color: #0088FF; color: #fff;
+    }
+
+    /* Screenshot gallery */
+    .screenshot-gallery {
+      display: flex; gap: 20px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: 0 max(24px, calc((100vw - 1200px) / 2)) 20px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .screenshot-gallery::-webkit-scrollbar { display: none; }
+    .screenshot-gallery img {
+      flex: 0 0 auto;
+      width: 240px; border-radius: 24px;
+      scroll-snap-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .screenshot-gallery img:hover { transform: translateY(-8px); }
+    .screenshot-set { display: none; }
+    .screenshot-set.active { display: flex; gap: 20px; }
+
+    /* ── Features ── */
+    .features {
+      padding: 100px 24px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px; margin-top: 48px;
+    }
+    .feature-card {
+      padding: 32px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid #f0f0f0;
+      transition: all 0.3s;
+    }
+    .feature-card:hover {
+      border-color: rgba(0,136,255,0.2);
+      box-shadow: 0 8px 32px rgba(0,136,255,0.08);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-size: 20px; font-weight: 700;
+      margin-bottom: 8px; letter-spacing: -0.3px;
+    }
+    .feature-card p {
+      font-size: 15px; color: #888; line-height: 1.7;
+    }
+
+    /* ── Pricing ── */
+    .pricing {
+      padding: 100px 24px;
+      background: #fafbfc;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; max-width: 720px; margin: 48px auto 0;
+    }
+    .pricing-card {
+      padding: 36px 32px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1.5px solid #f0f0f0;
+      text-align: center;
+    }
+    .pricing-card.featured {
+      border-color: #0088FF;
+      box-shadow: 0 8px 40px rgba(0,136,255,0.12);
+      position: relative;
+    }
+    .pricing-card.featured::before {
+      content: 'BEST';
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: #0088FF; color: #fff;
+      font-size: 11px; font-weight: 700;
+      padding: 4px 14px; border-radius: 10px;
+    }
+    .pricing-card h3 {
+      font-size: 22px; font-weight: 700; margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-size: 36px; font-weight: 800; margin: 16px 0 8px;
+      letter-spacing: -1px;
+    }
+    .pricing-price span { font-size: 16px; font-weight: 500; color: #888; }
+    .pricing-desc {
+      font-size: 14px; color: #888; margin-bottom: 24px;
+    }
+    .pricing-features {
+      list-style: none; text-align: left;
+    }
+    .pricing-features li {
+      font-size: 14px; padding: 8px 0;
+      border-bottom: 1px solid #f5f5f5;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .pricing-features li::before {
+      content: '✓'; color: #0088FF; font-weight: 700;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 100px 24px;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 0%, #f0f7ff 100%);
+    }
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800; letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .cta p {
+      font-size: 18px; color: #666;
+      margin-bottom: 40px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 40px 24px;
+      border-top: 1px solid #f0f0f0;
+      text-align: center;
+    }
+    .footer-links-row {
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap; margin-bottom: 16px;
+    }
+    .footer-links-row a {
+      font-size: 13px; color: #888; transition: color 0.2s;
+    }
+    .footer-links-row a:hover { color: #0088FF; }
+    .footer-copy {
+      font-size: 12px; color: #bbb;
+    }
+
+    /* ── Dark mode ── */
+    @media (prefers-color-scheme: dark) {
+      body { background: #0a0a0a; color: #e8e8e8; }
+      .nav { background: rgba(10,10,10,0.85); border-bottom-color: rgba(255,255,255,0.06); }
+      .nav-links a { color: #999; }
+      .nav-links a:hover { background: rgba(0,136,255,0.1); }
+      .hero { background: linear-gradient(180deg, #0d1520 0%, #0a0a0a 100%); }
+      .hero h1 { color: #f0f0f0; }
+      .hero p { color: #888; }
+      .hero-badge { background: rgba(0,136,255,0.15); }
+      .screenshots { background: #111; }
+      .section-header p { color: #666; }
+      .lang-tab { border-color: #333; color: #888; }
+      .lang-tab:hover { border-color: #0088FF; }
+      .screenshot-gallery img { box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+      .features { color: #e8e8e8; }
+      .feature-card { background: #151515; border-color: #222; }
+      .feature-card:hover { border-color: rgba(0,136,255,0.3); box-shadow: 0 8px 32px rgba(0,136,255,0.1); }
+      .feature-card p { color: #777; }
+      .pricing { background: #111; }
+      .pricing-card { background: #151515; border-color: #222; }
+      .pricing-card.featured { border-color: #0088FF; box-shadow: 0 8px 40px rgba(0,136,255,0.15); }
+      .pricing-desc { color: #666; }
+      .pricing-features li { border-bottom-color: #222; }
+      .cta { background: linear-gradient(180deg, #0a0a0a 0%, #0d1520 100%); }
+      .cta p { color: #888; }
+      .footer { border-top-color: #222; }
+      .footer-links-row a { color: #666; }
+      .footer-copy { color: #444; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 20px 60px; }
+      .screenshot-gallery img { width: 200px; border-radius: 20px; }
+      .feature-grid { grid-template-columns: 1fr; gap: 20px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Cleio</a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links-row">
+      <a href="/privacy-policy/">개인정보처리방침</a>
+      <a href="/terms-of-service/">이용약관</a>
+      <a href="/privacy-policy-en/">Privacy Policy</a>
+      <a href="/terms-of-service-en/">Terms of Service</a>
+      <a href="/privacy-policy-ja/">プライバシーポリシー</a>
+      <a href="/terms-of-service-ja/">利用規約</a>
+      <a href="/support/">고객 지원</a>
+    </div>
+    <p class="footer-copy">© 2026 Cleio · kdwara@icloud.com</p>
+  </footer>
+
+  <script>
+    // Language tab switching
+    document.querySelectorAll('.lang-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var lang = this.dataset.lang;
+        document.querySelectorAll('.lang-tab').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        document.querySelectorAll('.screenshot-set').forEach(function(s) { s.classList.remove('active'); });
+        document.querySelector('.screenshot-set[data-lang="' + lang + '"]').classList.add('active');
+      });
+    });
+
+    // Auto-detect language for initial tab
+    (function() {
+      var userLang = (navigator.language || '').toLowerCase();
+      var lang = 'ko';
+      if (userLang.startsWith('ja')) lang = 'ja';
+      else if (userLang.startsWith('en')) lang = 'en';
+      var tab = document.querySelector('.lang-tab[data-lang="' + lang + '"]');
+      if (tab) tab.click();
+    })();
+  </script>
+
+</body>
+</html>
