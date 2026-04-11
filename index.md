@@ -118,8 +118,8 @@ permalink: /
       <p class="pricing-desc">클라우드 AI로 더 정확하게</p>
       <ul class="pricing-features">
         <li>Free의 모든 기능</li>
-        <li>GPT 기반 고품질 요약</li>
-        <li>텍스트 교정 (클라우드 AI)</li>
+        <li>Cloud AI 고품질 요약</li>
+        <li>텍스트 교정 (Cloud AI)</li>
         <li>iCloud 동기화</li>
         <li>Markdown / PDF 내보내기</li>
       </ul>
