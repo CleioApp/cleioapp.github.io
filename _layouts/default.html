@@ -33,11 +33,13 @@
           {% endif %}
         </div>
 
-        {% if page.alt_url %}
+        {% if page.alt_links %}
           <nav class="lang-switch" aria-label="Language">
-            <a href="{{ page.alt_url | relative_url }}" rel="alternate" hreflang="{% if page.lang == 'ko' %}en{% else %}ko{% endif %}">
-              {{ page.alt_label }}
-            </a>
+            {% for link in page.alt_links %}
+              <a href="{{ link.url | relative_url }}" rel="alternate" hreflang="{{ link.hreflang }}">
+                {{ link.label }}
+              </a>
+            {% endfor %}
           </nav>
         {% endif %}
       </div>

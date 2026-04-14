@@ -3,8 +3,9 @@ layout: default
 title: 고객 지원
 permalink: /support/
 lang: ko
-alt_url: /support-en/
-alt_label: English
+alt_links:
+  - { url: /support-en/, label: English, hreflang: en }
+  - { url: /support-ja/, label: 日本語, hreflang: ja }
 ---
 
 # Cleio 고객 지원
@@ -76,7 +77,7 @@ Cleio는 마이크 가까이에서 이루어지는 대화(회의, 인터뷰, 메
 
 ### Q. 다른 언어도 지원하나요?
 
-현재 한국어를 정식 지원해요. 영어, 일본어 등 추가 언어 지원은 업데이트로 준비 중이에요.
+Cleio는 한국어, 영어, 일본어를 지원해요. 음성 기록 엔진은 20개 이상의 언어를 이해할 수 있으며, 향후 업데이트로 UI 지원 언어가 추가될 수 있어요.
 
 ---
 

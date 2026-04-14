@@ -3,8 +3,9 @@ layout: default
 title: 利用規約
 permalink: /terms-of-service-ja/
 lang: ja
-alt_url: /terms-of-service/
-alt_label: 한국어
+alt_links:
+  - { url: /terms-of-service/, label: 한국어, hreflang: ko }
+  - { url: /terms-of-service-en/, label: English, hreflang: en }
 ---
 
 

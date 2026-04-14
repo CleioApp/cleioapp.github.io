@@ -3,8 +3,9 @@ layout: default
 title: 개인정보처리방침
 permalink: /privacy-policy/
 lang: ko
-alt_url: /privacy-policy-en/
-alt_label: English
+alt_links:
+  - { url: /privacy-policy-en/, label: English, hreflang: en }
+  - { url: /privacy-policy-ja/, label: 日本語, hreflang: ja }
 ---
 
 

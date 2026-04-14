@@ -3,8 +3,9 @@ layout: default
 title: サポート
 permalink: /support-ja/
 lang: ja
-alt_url: /support/
-alt_label: 한국어
+alt_links:
+  - { url: /support/, label: 한국어, hreflang: ko }
+  - { url: /support-en/, label: English, hreflang: en }
 ---
 
 # Cleio サポート

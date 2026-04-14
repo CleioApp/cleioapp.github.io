@@ -3,8 +3,9 @@ layout: default
 title: Privacy Policy
 permalink: /privacy-policy-en/
 lang: en
-alt_url: /privacy-policy/
-alt_label: 한국어
+alt_links:
+  - { url: /privacy-policy/, label: 한국어, hreflang: ko }
+  - { url: /privacy-policy-ja/, label: 日本語, hreflang: ja }
 ---
 
 

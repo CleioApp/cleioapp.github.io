@@ -3,8 +3,9 @@ layout: default
 title: Terms of Service
 permalink: /terms-of-service-en/
 lang: en
-alt_url: /terms-of-service/
-alt_label: 한국어
+alt_links:
+  - { url: /terms-of-service/, label: 한국어, hreflang: ko }
+  - { url: /terms-of-service-ja/, label: 日本語, hreflang: ja }
 ---
 
 

@@ -3,8 +3,9 @@ layout: default
 title: 이용약관
 permalink: /terms-of-service/
 lang: ko
-alt_url: /terms-of-service-en/
-alt_label: English
+alt_links:
+  - { url: /terms-of-service-en/, label: English, hreflang: en }
+  - { url: /terms-of-service-ja/, label: 日本語, hreflang: ja }
 ---
 
 
