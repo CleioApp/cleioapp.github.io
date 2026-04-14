@@ -42,6 +42,14 @@ No. **Audio files are never transmitted externally under any circumstances.** Fr
 
 That's the process of downloading the AI Models used for on-device analysis (Speech Recognition, Speaker Identification, and AI Summary) to your iPhone. **We recommend doing this over Wi-Fi.** Once the download is complete, you can use all features without an internet connection.
 
+### Q. How long does AI Model preparation take?
+
+Even after the download finishes, launching the app for the first time or after a long break requires a few seconds to tens of seconds to **load the AI Model into memory**. The exact time depends on your device's performance and model size.
+
+- **Please keep the app open and wait until preparation finishes.** If the app moves to the background, preparation may be interrupted.
+- The screen is set not to auto-lock while preparation is in progress.
+- Once preparation completes, the Home screen will show that recording is ready to start.
+
 ### Q. How do I cancel my Pro subscription?
 
 You can cancel anytime from Apple's subscription management screen.
