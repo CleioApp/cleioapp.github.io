@@ -44,7 +44,7 @@ That's the process of downloading the AI Models used for on-device analysis (Spe
 
 ### Q. How long does AI Model preparation take?
 
-Even after the download finishes, launching the app for the first time or after a long break requires some time to **load the AI Model into memory**. This usually takes anywhere from a few seconds to about a minute, but depending on your device's performance and the model size, it can take **up to 3–5 minutes**.
+Even after the download finishes, launching the app for the first time or after a long break requires some time to **load the AI Model into memory**. Because Cleio uses the highest-accuracy model available, preparation typically takes **1–2 minutes, and up to 3–5 minutes** depending on your device's performance.
 
 - **Please keep the app open and wait until preparation finishes.** If the app moves to the background, preparation may be interrupted.
 - The screen is set not to auto-lock while preparation is in progress.
