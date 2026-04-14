@@ -10,7 +10,7 @@ alt_links:
 
 
 > **Version**: 1.0
-> **Effective Date**: 2026-05-01
+> **Effective Date**: 2026-04-14
 >
 > This document is a translation provided for convenience only. The Korean-language version is the authoritative original. In case of any conflict between this translation and the Korean original, the Korean original shall prevail.
 
