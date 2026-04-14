@@ -49,6 +49,7 @@ Even after the download finishes, launching the app for the first time or after 
 - **Please keep the app open and wait until preparation finishes.** If the app moves to the background, preparation may be interrupted.
 - The screen is set not to auto-lock while preparation is in progress.
 - Once preparation completes, the Home screen will show that recording is ready to start.
+- Right after an iOS update or a Cleio app update, the AI Model may need to be prepared again. In this case, simply keep the app open and wait a moment.
 
 ### Q. How do I cancel my Pro subscription?
 
