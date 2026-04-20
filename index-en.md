@@ -14,7 +14,6 @@ nav_support: "Support"
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-badge">🎙️ iOS App</div>
   <h1>Record, <span>and beyond</span></h1>
   <p>One recording. Instant transcripts, speaker identification, and AI summaries.<br>Stay focused on your meeting — Cleio handles the rest.</p>
   <a href="https://apps.apple.com/app/cleio" class="app-store-badge" aria-label="Download on the App Store">
@@ -29,33 +28,13 @@ nav_support: "Support"
     <p>From recording to summary, all in one app.</p>
   </div>
 
-  <div class="lang-tabs">
-    <button class="lang-tab" data-lang="ko">한국어</button>
-    <button class="lang-tab active" data-lang="en">English</button>
-    <button class="lang-tab" data-lang="ja">日本語</button>
-  </div>
-
   <div class="screenshot-gallery">
-    <div class="screenshot-set" data-lang="ko">
-      <img src="/assets/screenshots/ko/1.png" alt="Cleio home screen" loading="lazy">
-      <img src="/assets/screenshots/ko/2.png" alt="Recording and settings" loading="lazy">
-      <img src="/assets/screenshots/ko/3.png" alt="Folder management" loading="lazy">
-      <img src="/assets/screenshots/ko/4.png" alt="Speaker identification" loading="lazy">
-      <img src="/assets/screenshots/ko/5.png" alt="AI summary" loading="lazy">
-    </div>
-    <div class="screenshot-set active" data-lang="en">
+    <div class="screenshot-set active">
       <img src="/assets/screenshots/en/1.png" alt="Cleio home screen" loading="lazy">
       <img src="/assets/screenshots/en/2.png" alt="Recording and settings" loading="lazy">
       <img src="/assets/screenshots/en/3.png" alt="Folder management" loading="lazy">
       <img src="/assets/screenshots/en/4.png" alt="Speaker identification" loading="lazy">
       <img src="/assets/screenshots/en/5.png" alt="AI summary" loading="lazy">
-    </div>
-    <div class="screenshot-set" data-lang="ja">
-      <img src="/assets/screenshots/ja/1.png" alt="Cleio home screen" loading="lazy">
-      <img src="/assets/screenshots/ja/2.png" alt="Recording and settings" loading="lazy">
-      <img src="/assets/screenshots/ja/3.png" alt="Folder management" loading="lazy">
-      <img src="/assets/screenshots/ja/4.png" alt="Speaker identification" loading="lazy">
-      <img src="/assets/screenshots/ja/5.png" alt="AI summary" loading="lazy">
     </div>
   </div>
 </section>

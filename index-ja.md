@@ -14,7 +14,6 @@ nav_support: "サポート"
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-badge">🎙️ iOSアプリ</div>
   <h1>録音、<span>その先へ</span></h1>
   <p>録音するだけで、文字起こし・話者識別・AI要約まで。<br>会議に集中してください。記録はCleioが引き受けます。</p>
   <a href="https://apps.apple.com/app/cleio" class="app-store-badge" aria-label="App Storeでダウンロード">
@@ -29,28 +28,8 @@ nav_support: "サポート"
     <p>録音から要約まで、ひとつのアプリで</p>
   </div>
 
-  <div class="lang-tabs">
-    <button class="lang-tab" data-lang="ko">한국어</button>
-    <button class="lang-tab" data-lang="en">English</button>
-    <button class="lang-tab active" data-lang="ja">日本語</button>
-  </div>
-
   <div class="screenshot-gallery">
-    <div class="screenshot-set" data-lang="ko">
-      <img src="/assets/screenshots/ko/1.png" alt="Cleioホーム画面" loading="lazy">
-      <img src="/assets/screenshots/ko/2.png" alt="録音と設定" loading="lazy">
-      <img src="/assets/screenshots/ko/3.png" alt="フォルダ管理" loading="lazy">
-      <img src="/assets/screenshots/ko/4.png" alt="話者識別" loading="lazy">
-      <img src="/assets/screenshots/ko/5.png" alt="AI要約" loading="lazy">
-    </div>
-    <div class="screenshot-set" data-lang="en">
-      <img src="/assets/screenshots/en/1.png" alt="Cleioホーム画面" loading="lazy">
-      <img src="/assets/screenshots/en/2.png" alt="録音と設定" loading="lazy">
-      <img src="/assets/screenshots/en/3.png" alt="フォルダ管理" loading="lazy">
-      <img src="/assets/screenshots/en/4.png" alt="話者識別" loading="lazy">
-      <img src="/assets/screenshots/en/5.png" alt="AI要約" loading="lazy">
-    </div>
-    <div class="screenshot-set active" data-lang="ja">
+    <div class="screenshot-set active">
       <img src="/assets/screenshots/ja/1.png" alt="Cleioホーム画面" loading="lazy">
       <img src="/assets/screenshots/ja/2.png" alt="録音と設定" loading="lazy">
       <img src="/assets/screenshots/ja/3.png" alt="フォルダ管理" loading="lazy">
