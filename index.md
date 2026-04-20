@@ -14,7 +14,6 @@ nav_support: "고객 지원"
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-badge">🎙️ iOS 앱</div>
   <h1>녹음, <span>그 이상</span></h1>
   <p>녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지.<br>회의에 집중하세요. 기록은 Cleio가 할게요.</p>
   <a href="https://apps.apple.com/app/cleio" class="app-store-badge" aria-label="App Store에서 다운로드">
@@ -29,33 +28,13 @@ nav_support: "고객 지원"
     <p>녹음부터 요약까지, 하나의 앱에서</p>
   </div>
 
-  <div class="lang-tabs">
-    <button class="lang-tab active" data-lang="ko">한국어</button>
-    <button class="lang-tab" data-lang="en">English</button>
-    <button class="lang-tab" data-lang="ja">日本語</button>
-  </div>
-
   <div class="screenshot-gallery">
-    <div class="screenshot-set active" data-lang="ko">
+    <div class="screenshot-set active">
       <img src="/assets/screenshots/ko/1.png" alt="Cleio 홈 화면" loading="lazy">
       <img src="/assets/screenshots/ko/2.png" alt="녹음 및 설정" loading="lazy">
       <img src="/assets/screenshots/ko/3.png" alt="폴더 관리" loading="lazy">
       <img src="/assets/screenshots/ko/4.png" alt="화자 분리" loading="lazy">
       <img src="/assets/screenshots/ko/5.png" alt="AI 요약" loading="lazy">
-    </div>
-    <div class="screenshot-set" data-lang="en">
-      <img src="/assets/screenshots/en/1.png" alt="Cleio Home" loading="lazy">
-      <img src="/assets/screenshots/en/2.png" alt="Recording & Settings" loading="lazy">
-      <img src="/assets/screenshots/en/3.png" alt="Folder Management" loading="lazy">
-      <img src="/assets/screenshots/en/4.png" alt="Speaker Identification" loading="lazy">
-      <img src="/assets/screenshots/en/5.png" alt="AI Summary" loading="lazy">
-    </div>
-    <div class="screenshot-set" data-lang="ja">
-      <img src="/assets/screenshots/ja/1.png" alt="Cleio ホーム" loading="lazy">
-      <img src="/assets/screenshots/ja/2.png" alt="録音と設定" loading="lazy">
-      <img src="/assets/screenshots/ja/3.png" alt="フォルダ管理" loading="lazy">
-      <img src="/assets/screenshots/ja/4.png" alt="話者識別" loading="lazy">
-      <img src="/assets/screenshots/ja/5.png" alt="AI 要約" loading="lazy">
     </div>
   </div>
 </section>
