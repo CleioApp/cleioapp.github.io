@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="{{ page.lang | default: 'ko-KR' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
@@ -7,14 +7,21 @@
   <meta name="theme-color" content="#0066cc" media="(prefers-color-scheme: dark)">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>Cleio — 똑똑한 음성 녹음</title>
-  <meta name="description" content="녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지. Cleio와 함께 회의에 집중하세요.">
+  <title>{{ page.meta_title | default: 'Cleio — 똑똑한 음성 녹음' }}</title>
+  <meta name="description" content="{{ page.meta_description | default: '녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지. Cleio와 함께 회의에 집중하세요.' }}">
+
+  <!-- hreflang for multilingual landing pages -->
+  <link rel="alternate" hreflang="ko" href="https://cleioapp.github.io/">
+  <link rel="alternate" hreflang="en" href="https://cleioapp.github.io/en/">
+  <link rel="alternate" hreflang="ja" href="https://cleioapp.github.io/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://cleioapp.github.io/">
 
   <!-- OG -->
-  <meta property="og:title" content="Cleio — 똑똑한 음성 녹음">
-  <meta property="og:description" content="녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지.">
+  <meta property="og:title" content="{{ page.og_title | default: page.meta_title | default: 'Cleio — 똑똑한 음성 녹음' }}">
+  <meta property="og:description" content="{{ page.og_description | default: page.meta_description | default: '녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지.' }}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cleioapp.github.io">
+  <meta property="og:locale" content="{{ page.og_locale | default: 'ko_KR' }}">
+  <meta property="og:url" content="https://cleioapp.github.io{{ page.permalink | default: '/' }}">
 
   <!-- Pretendard -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -57,6 +64,24 @@
     }
     .nav-links a:hover { color: #0088FF; background: rgba(0,136,255,0.06); }
     .nav-links a.active { color: #0088FF; }
+
+    /* ── Language Switcher ── */
+    .nav-lang {
+      display: flex; align-items: center; gap: 4px;
+      margin-left: 8px; padding-left: 12px;
+      border-left: 1px solid rgba(0,0,0,0.1);
+    }
+    .nav-lang a {
+      font-size: 13px; font-weight: 500; color: #888;
+      padding: 4px 8px; border-radius: 6px; transition: all 0.2s;
+    }
+    .nav-lang a:hover { color: #0088FF; background: rgba(0,136,255,0.06); }
+    .nav-lang a.current { color: #0088FF; font-weight: 600; }
+    @media (max-width: 520px) {
+      .nav-links a[href^="#"] { display: none; }
+      .nav-lang { margin-left: 4px; padding-left: 8px; }
+      .nav-lang a { padding: 4px 6px; font-size: 12px; }
+    }
 
     /* ── Hero ── */
     .hero {
@@ -309,11 +334,17 @@
   <!-- Nav -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Cleio</a>
+      <a href="{{ page.permalink | default: '/' }}" class="nav-logo">Cleio</a>
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="/support/">Support</a>
+        <a href="#features">{{ page.nav_features | default: 'Features' }}</a>
+        <a href="#pricing">{{ page.nav_pricing | default: 'Pricing' }}</a>
+        <a href="/support/">{{ page.nav_support | default: 'Support' }}</a>
+        <div class="nav-lang" aria-label="Language">
+          {% assign lang = page.lang | default: 'ko-KR' %}
+          <a href="/" class="{% if lang == 'ko-KR' %}current{% endif %}" hreflang="ko" lang="ko">한국어</a>
+          <a href="/en/" class="{% if lang == 'en-US' %}current{% endif %}" hreflang="en" lang="en">EN</a>
+          <a href="/ja/" class="{% if lang == 'ja-JP' %}current{% endif %}" hreflang="ja" lang="ja">日本語</a>
+        </div>
       </div>
     </div>
   </nav>

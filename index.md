@@ -1,6 +1,15 @@
 ---
 layout: landing
 permalink: /
+lang: ko-KR
+og_locale: ko_KR
+meta_title: "Cleio — 똑똑한 음성 녹음"
+meta_description: "녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지. Cleio와 함께 회의에 집중하세요."
+og_title: "Cleio — 똑똑한 음성 녹음"
+og_description: "녹음 한 번으로 음성 기록, 화자 분리, AI 요약까지."
+nav_features: "Features"
+nav_pricing: "Pricing"
+nav_support: "고객 지원"
 ---
 
 <!-- Hero -->
