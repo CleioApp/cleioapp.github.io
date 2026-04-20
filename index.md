@@ -114,7 +114,8 @@ permalink: /
     </div>
     <div class="pricing-card featured">
       <h3>Pro</h3>
-      <div class="pricing-price">₩4,900<span>/월</span></div>
+      <div class="pricing-price">₩6,600<span>/월</span></div>
+      <p class="pricing-desc" style="font-size:13px;opacity:0.75;margin-top:-8px;">$4.99 USD · ¥800 JPY</p>
       <p class="pricing-desc">클라우드 AI로 더 정확하게</p>
       <ul class="pricing-features">
         <li>Free의 모든 기능</li>
