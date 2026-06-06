@@ -8,11 +8,13 @@ alt_links:
   - { url: /terms-of-service-ja/, label: 日本語, hreflang: ja }
 ---
 
-
-> **Version**: 1.0
-> **Effective Date**: 2026-04-14
+> **Version**: 1.2
+> **Effective Date**: 2026-06-08
+> **Last Updated**: 2026-06-08
 >
 > This document is a translation provided for convenience only. The Korean-language version is the authoritative original. In case of any conflict between this translation and the Korean original, the Korean original shall prevail.
+>
+> **Key changes in v1.2**: Added multilingual meeting translation (Pro), two-way Reminders (EventKit) synchronization, disclosure of Calendar (EventKit) automatic event matching, iPhone storage optimization (Pro), and disclosure of Firebase Cloud Functions backend infrastructure.
 
 ---
 
@@ -95,14 +97,15 @@ The Pro plan includes all Free plan features plus:
 
 - OpenAI GPT-powered AI summarization (text only transmitted; no audio transmitted)
 - OpenAI-powered transcription text correction (text only transmitted)
-- iCloud synchronization
+- OpenAI-powered multilingual meeting translation (text segments only transmitted)
+- iCloud synchronization (real-time data and iPhone storage optimization)
 - Export capabilities (Markdown/PDF)
 
 Under the Pro plan, transcribed text (not audio files) may be transmitted to OpenAI's API for processing. **Audio files are never transmitted to external servers under any circumstances.**
 
 **Credit Limits**
 
-OpenAI-powered AI summarization and text correction within the Pro plan are subject to a monthly credit limit. When credits are exhausted, these features become unavailable until credits are replenished at the start of the next billing cycle. On-device features (speech-to-text transcription, speaker diarization, and on-device AI summarization) are always available regardless of credit usage.
+OpenAI-powered AI summarization, text correction, and multilingual translation within the Pro plan are subject to a monthly credit limit. When credits are exhausted, these features become unavailable until credits are replenished at the start of the next billing cycle. On-device features (speech-to-text transcription, speaker diarization, and on-device AI summarization) are always available regardless of credit usage.
 
 **Pricing**
 
@@ -178,15 +181,21 @@ Violation of these Terms may result in the suspension or termination of your acc
 
 ## Article 10. Data Processing and Privacy
 
-1. **On-Device Processing (Free Plan).** Under the Free plan, all audio processing, transcription, speaker diarization, and summarization occur entirely on your device. No audio or text data is transmitted to external servers.
+1. **On-Device Processing (Free Plan).** Under the Free plan, all audio processing, transcription, real-time speaker diarization, and summarization occur entirely on your device. No audio or text data is transmitted to external servers.
 
-2. **Cloud Processing (Pro Plan).** Under the Pro plan, transcribed text may be transmitted to OpenAI's API for enhanced summarization and text correction. Audio files are never transmitted to external servers.
+2. **Cloud Processing (Pro Plan).** Under the Pro plan, transcribed text may be transmitted to OpenAI's API for enhanced summarization, text correction, and multilingual translation. Audio files are never transmitted to external servers under any circumstances.
 
-3. **Analytics and Crash Reporting.** The App uses Firebase Analytics and Crashlytics to collect anonymized usage data and crash reports for the purpose of improving the Service. This data does not include recordings or transcription content. The App does not currently provide an in-app toggle to disable Firebase Analytics; to opt out, please contact kdwara@icloud.com.
+3. **Two-Way Reminders Synchronization (opt-in).** Action items may be synchronized two-way with the iOS Reminders app (EventKit). This feature requires Reminders permission; core functionality (recording, transcription, summarization) continues to work without this permission.
 
-4. **iCloud Sync (Pro Plan).** Pro subscribers may use iCloud synchronization, which stores data on Apple's iCloud infrastructure, governed by Apple's privacy policies.
+4. **Calendar Event Automatic Matching (opt-in).** Recordings may be automatically matched with events in the iOS Calendar app (EventKit). This feature requires Calendar permission. Event data is processed on-device only and is never transmitted to the Operator's servers (for Pro subscribers, the matching metadata syncs only to the user's own Apple iCloud). Core functionality (recording, transcription, summarization) continues to work without this permission.
 
-5. **Privacy Policy.** For detailed information about our data practices, please refer to the Privacy Policy available within the App.
+5. **Analytics and Crash Reporting.** The App uses Firebase Analytics and Crashlytics to collect anonymized usage data and crash reports for the purpose of improving the Service. This data does not include recordings or transcription content. The App does not currently provide an in-app toggle to disable Firebase Analytics; to opt out, please contact kdwara@icloud.com.
+
+6. **Backend Infrastructure.** The Operator operates Google Firebase Cloud Functions (United States region, project `cleio-prod`) for backend functions including OpenAI API proxy, subscription verification, and credit management. This infrastructure is invoked only when Pro cloud features are requested.
+
+7. **iCloud Sync (Pro Plan).** Pro subscribers may use iCloud synchronization and iPhone storage optimization. Data is stored on Apple's iCloud infrastructure, governed by Apple's privacy policies.
+
+8. **Privacy Policy.** For detailed information about our data practices, please refer to the Privacy Policy available within the App.
 
 ---
 

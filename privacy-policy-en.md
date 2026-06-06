@@ -8,17 +8,19 @@ alt_links:
   - { url: /privacy-policy-ja/, label: 日本語, hreflang: ja }
 ---
 
-
 > **App Name**: Cleio
 > **Bundle ID**: io.cleio.app
 > **Operator**: Kidae Lee (이기대)
 > **Contact**: kdwara@icloud.com
 > **Address**: 7, Yangdal-ro, Gwangmyeong-si, Gyeonggi-do, Republic of Korea
 > **Business Registration No.**: 611-48-01233
-> **Version**: 1.0
-> **Effective Date**: 2026-04-14
+> **Version**: 1.2
+> **Effective Date**: 2026-06-08
+> **Last Updated**: 2026-06-08
 >
 > This document is a translation provided for convenience only. The Korean-language version is the authoritative original. In case of any conflict between this translation and the Korean original, the Korean original shall prevail.
+>
+> **Key changes in v1.2**: Added multilingual meeting translation (Pro), two-way Reminders (EventKit) sync, disclosure of Calendar (EventKit) automatic event matching, iPhone storage optimization (Pro+iCloud), and disclosure of Firebase Cloud Functions backend infrastructure.
 
 ---
 
@@ -30,6 +32,7 @@ alt_links:
 4. [Retention Periods](#article-4-retention-periods)
 5. [Third-Party Disclosure](#article-5-third-party-disclosure)
 6. [Outsourced Processing](#article-6-outsourced-processing)
+6-2. [Prior Consent for Cloud AI Features](#article-6-2-prior-consent-for-cloud-ai-features)
 7. [International Data Transfers](#article-7-international-data-transfers)
 8. [Your Rights and How to Exercise Them](#article-8-your-rights-and-how-to-exercise-them)
 9. [Data Deletion and Destruction](#article-9-data-deletion-and-destruction)
@@ -58,12 +61,17 @@ By using the App, you acknowledge that you have read and understood this Privacy
 | Data | Purpose | Storage | External Transfer | Retention |
 |------|---------|---------|-------------------|-----------|
 | Audio recordings (M4A) | Core service — voice recording | Local device + iCloud (Pro) | None | Until deleted by user |
-| Transcription text | Speech-to-text conversion results | Local (SwiftData) + iCloud (Pro) | OpenAI API (Pro only, text correction/summarization; text only) | Until deleted by user |
-| AI summary text | Meeting/conversation summaries | Local (SwiftData) + iCloud (Pro) | OpenAI API (Pro only, summarization; text only) | Until deleted by user |
-| Speaker diarization results | Per-utterance speaker identification | Local (SwiftData) | None | Until deleted by user |
+| Transcription text | Speech-to-text conversion results | Local (SwiftData) + iCloud (Pro) | OpenAI API (Pro text correction / summarization / translation; text only) | Until deleted by user |
+| AI summary text | Meeting/conversation summaries | Local (SwiftData) + iCloud (Pro) | OpenAI API (Pro summarization; text only) | Until deleted by user |
+| Action items (to-dos) | To-do items extracted from summaries | Local (SwiftData) + iCloud (Pro) + Reminders app (EventKit, when user exports) | None | Until deleted by user |
+| Speaker diarization results | Per-utterance speaker identification | Local (SwiftData) + iCloud (Pro) | None | Until deleted by user |
+| Calendar event matching data (event title, identifier, date/time) | Automatic matching of recordings with Calendar events | Local (SwiftData) + iCloud (Pro) | None | Until deleted by user |
+| Translation text (Pro) | Display original/translated text for multilingual meetings | Local (SwiftData) + iCloud (Pro) | OpenAI API (when user requests translation; text only) | Until deleted by user |
 | App settings | User preferences | UserDefaults + iCloud KVS (Pro) | None | Until app deletion |
 
-**Audio files are never transmitted to external servers under any circumstances.** Only text is sent to the OpenAI API.
+**Audio files are never transmitted to external servers under any circumstances.** Only text is sent to OpenAI, and **the user's explicit consent is always obtained before any transmission** (see **Article 6-2** for details).
+
+**Calendar event data is read only on-device and is never transmitted to the Operator's servers.** When Calendar permission is granted, the App reads event information solely to match recordings with Calendar events, and caches only the matching event's title, identifier, and date/time on the device; for Pro subscribers this cached metadata syncs only to the user's own Apple iCloud (it is not sent to any third-party server). Denying Calendar permission does not affect core features such as recording, transcription, and summarization.
 
 ### 2.2 Automatically Collected Data
 
@@ -76,18 +84,29 @@ By using the App, you acknowledge that you have read and understood this Privacy
 
 Automatically collected data does not include recording content or transcription text.
 
+### 2.2-A iPhone Storage Optimization (Pro, opt-in)
+
+When the user explicitly enables "iPhone Storage Optimization," the Operator processes data as follows.
+
+- Audio files stored locally on the device are automatically deleted and retained only in iCloud Drive (the user's personal Apple account).
+- Text data (transcription, summaries, action items, etc.) is unaffected (kept both locally and in iCloud).
+- Audio files are automatically downloaded from iCloud Drive when playback or analysis is required.
+- This feature is exclusive to Pro subscribers and can be disabled by the user at any time.
+
 ---
 
 ## Article 3. Purposes of Processing
 
 The Operator processes personal information for the following purposes.
 
-1. **Core Service Delivery** — Audio recording, speech-to-text transcription, speaker diarization, and AI summarization.
-2. **Pro Subscription Features** — OpenAI-powered text correction and GPT summarization, iCloud synchronization, and export capabilities (Markdown/PDF).
-3. **Service Improvement** — Analysis of anonymized usage patterns to enhance features and user experience.
-4. **Stability and Performance** — Collection of crash reports and performance metrics to maintain and improve app reliability.
-5. **Payment Processing** — Managing subscription status through Apple's StoreKit.
-6. **User Preferences** — Storing and synchronizing app settings across devices (Pro).
+1. **Core Service Delivery** — Audio recording, speech-to-text transcription, real-time speaker diarization, and AI summarization.
+2. **Pro Subscription Features** — OpenAI-powered text correction, GPT summarization, and multilingual meeting translation; iCloud synchronization (real-time data and iPhone storage optimization); export capabilities (Markdown/PDF).
+3. **Two-Way Reminders Synchronization (opt-in)** — Two-way sync of action items with the iOS Reminders app (EventKit).
+4. **Calendar Event Automatic Matching (opt-in)** — Automatically linking recordings with Calendar (EventKit) events for easier management.
+5. **Service Improvement** — Analysis of anonymized usage patterns to enhance features and user experience.
+6. **Stability and Performance** — Collection of crash reports and performance metrics to maintain and improve app reliability.
+7. **Payment Processing** — Managing subscription status through Apple's StoreKit.
+8. **User Preferences** — Storing and synchronizing app settings across devices (Pro).
 
 ---
 
@@ -98,11 +117,13 @@ Personal information is retained until the purpose of collection is fulfilled.
 | Data Category | Retention Period | Destruction Method |
 |---------------|-----------------|-------------------|
 | Audio recordings | Until deleted by user within the App | Removed from local storage and iCloud |
-| Transcription text, AI summaries, speaker diarization results | Until deleted by user within the App | Removed from SwiftData and iCloud |
+| Transcription text, AI summaries, speaker diarization results, action items, translation text, calendar matching data | Until deleted by user within the App | Removed from SwiftData and iCloud |
 | App settings | Until app is deleted from device | Cleared on app uninstallation |
 | Firebase Analytics data | Per Google's data retention policy (default: 14 months) | Automatic expiration |
 | Firebase Crashlytics data | Per Google's data retention policy (default: 90 days) | Automatic expiration |
-| OpenAI API transmitted data | Deleted within 30 days per OpenAI's API data policy; not used for model training | Automatic deletion by OpenAI |
+| Firebase Cloud Functions logs (OpenAI proxy, payment verification) | Per Google Cloud Logging default retention (30 days); no personally identifying content | Automatic expiration |
+| OpenAI API transmitted data (text correction, summarization, translation) | Deleted within 30 days per OpenAI's API data policy; not used for model training | Automatic deletion by OpenAI |
+| Reminders (EventKit) data | Per the iOS Reminders app's retention policy | User deletes directly from the Reminders app |
 
 If retention is required by law, the relevant data is stored separately and destroyed after the statutory retention period expires.
 
@@ -125,11 +146,55 @@ The Operator entrusts certain data processing to the following service providers
 
 | Processor | Entrusted Task | Retention | Contact |
 |-----------|---------------|-----------|---------|
-| OpenAI, Inc. (United States) | Pro: transcription text correction and AI summarization (text only; no audio) | Deleted within 30 days; not used for model training | privacy@openai.com |
-| Google LLC (United States) | Firebase analytics, crash reporting, performance monitoring | Per Google's retention policy | https://firebase.google.com/support/privacy |
-| Apple Inc. (United States) | StoreKit payment processing, iCloud storage (Pro) | Per Apple's retention policy | https://www.apple.com/privacy |
+| OpenAI, Inc. (United States) | Pro: transcription text correction, AI summarization, multilingual translation (text only; no audio) | Deleted within 30 days; not used for model training | privacy@openai.com |
+| Google LLC (United States) | Firebase analytics, crash reporting, performance monitoring, and Cloud Functions infrastructure operation (OpenAI proxy, subscription verification, credit management) | Per Google's retention policy | https://firebase.google.com/support/privacy |
+| Apple Inc. (United States) | StoreKit payment processing, iCloud storage (Pro), Reminders (EventKit) data storage | Per Apple's retention policy | https://www.apple.com/privacy |
 
-The Operator maintains written agreements with processors governing data protection obligations and oversees their compliance.
+The Operator maintains agreements (or applicable standard terms, the Apple App Store agreement, and the OpenAI Data Processing Addendum) with processors governing data protection obligations and oversees their compliance.
+
+---
+
+## Article 6-2. Prior Consent for Cloud AI Features
+
+The Operator provides the following Pro features that utilize OpenAI, Inc.'s (United States) GPT services.
+
+| Feature | Transmitted Data | Recipient | Default State |
+|---------|-----------------|-----------|---------------|
+| Text correction (Pro) | Transcription text (STT), language settings, user term dictionary | OpenAI, Inc. (United States) | **Inactive** (default OFF) |
+| AI summary (Pro) | Transcription text (STT), recording title, domain tag, summary length setting | OpenAI, Inc. (United States) | **Only when explicitly invoked by the user** |
+| Multilingual meeting translation (Pro) | Transcript segment (source text), source language, target language | OpenAI, Inc. (United States) | **Only when explicitly requested by the user** |
+
+**Not transmitted**: audio files, account identifiers (email, IDFA, etc.), device identifiers.
+
+### Consent Process
+
+When the user first invokes any of the features above, the App displays a **dedicated consent screen (bottom sheet)** that discloses the following:
+
+- Data items to be transmitted and the purpose of collection
+- Recipient (OpenAI, Inc.) and country (United States)
+- Retention period (deleted within 30 days) and notice that OpenAI does not use the data for model training
+- Notice that the feature will be unavailable if consent is declined, and that an on-device alternative is available
+- Link to this Privacy Policy
+
+**No data is transmitted to OpenAI until the user selects "Agree and Continue."** Consent for each feature (text correction, AI summary, multilingual translation) is managed **independently**, and consent status is stored only on the device (not synchronized to iCloud).
+
+### Withdrawal of Consent
+
+The user may withdraw consent in the following ways.
+
+- **Text correction**: Toggle off "AI Text Correction" in Settings > AI Features.
+- **AI summary**: Select **on-device summary** on the summary screen instead of Pro (cloud) summary.
+- **Multilingual meeting translation**: No data is transmitted unless the user actively requests a translation. Cached translations are deleted together with the source transcription when the transcription is deleted.
+- **Full withdrawal**: Cancel the Pro subscription — once canceled, all cloud AI features are deactivated, and no further data is transmitted to OpenAI.
+
+### Cloud-Free Alternatives
+
+The App provides the following **on-device processing** as the default, allowing core functionality to be used without consenting to the cloud AI features above.
+
+- Speech-to-text (STT): WhisperKit (on-device processing)
+- Speaker diarization: FluidAudio (on-device processing for both real-time and post-processing)
+- AI summary: Apple Foundation Models (on-device processing, iOS 26.1+)
+- Translation: Pro-exclusive feature; no OpenAI transmission if translation is not used
 
 ---
 
@@ -139,9 +204,9 @@ Your personal information may be transferred to and processed in countries outsi
 
 | Recipient | Country | Data Transferred | Purpose | Legal Basis |
 |-----------|---------|-----------------|---------|-------------|
-| OpenAI, Inc. | United States | Transcription text, summary input text (Pro users only) | Text correction and GPT summarization | Performance of service contract |
-| Google LLC | United States | Anonymized app usage events, crash logs, performance metrics | Analytics, stability, and performance monitoring | Performance of service contract |
-| Apple Inc. | United States | Payment information, iCloud-synced data (Pro) | Payment processing and cloud storage | Performance of service contract |
+| OpenAI, Inc. | United States | Transcription text, summary input text, translation input text (Pro features only, with user consent) | Text correction, GPT summarization, multilingual translation | User prior consent (Article 6-2) |
+| Google LLC | United States | (a) Anonymized app usage events, crash logs, performance metrics; (b) Cloud Functions invocation logs (no personally identifying content) | Analytics, stability, and performance monitoring; backend infrastructure operation (OpenAI proxy, subscription verification, credit management) | Performance of service contract |
+| Apple Inc. | United States | Payment information, iCloud-synced data (Pro), Reminders (EventKit) data | Payment processing, cloud storage, two-way iOS Reminders synchronization | Performance of service contract |
 
 These transfers are conducted in compliance with Article 28-8 of the Korean Personal Information Protection Act (PIPA) regarding cross-border data transfers.
 
@@ -159,8 +224,10 @@ You (or your legal representative) may exercise the following rights.
 **How to exercise your rights**
 
 - You can delete recordings and associated data directly within the App.
-- You can revoke microphone permission at any time through your device settings.
+- You can revoke permissions such as microphone, Calendar, and Reminders at any time through your device settings.
 - You may submit a request by email to kdwara@icloud.com. The Operator will process the request without undue delay and no later than **10 days** from receipt.
+- Withdrawal of consent for cloud AI features (text correction, AI summary, multilingual translation) is described in the **Withdrawal of Consent** section of **Article 6-2**.
+- Two-way Reminders synchronization can be stopped by toggling off "Reminders Sync" in Settings > Action Items.
 
 During the period in which a correction or deletion request is being processed, the Operator will not use or disclose the relevant personal information.
 
@@ -197,9 +264,13 @@ Cleio requests the following device permissions.
 | Permission | Purpose | Required |
 |------------|---------|----------|
 | Microphone | Audio recording | Required |
+| Calendar (EventKit) | Automatic matching of recordings with Calendar events | Optional — if declined, recording/transcription/summarization features continue to work normally; only the Calendar automatic matching feature is disabled |
+| Reminders (EventKit) | Two-way action item synchronization between the App and the iOS Reminders app | Optional — if declined, transcription/summarization features continue to work; only the Reminders sync feature is disabled |
 
 - Microphone permission is required for the App's core recording functionality. The App cannot function without microphone access.
 - Speech-to-text (STT) is processed entirely on-device and does not require a separate speech recognition permission.
+- Calendar permission is used only for matching recordings with Calendar events. Event data is read on-device only and is never transmitted externally. Core functionality of the App continues to work without it.
+- The Reminders permission is used only when exporting action items to the iOS Reminders app or maintaining two-way synchronization. Core functionality of the App continues to work without it.
 - Permissions can be managed through your device's Settings at any time.
 
 ---
@@ -222,16 +293,20 @@ The Operator implements the following technical and administrative safeguards to
 
 **Technical Safeguards**
 
-- **On-Device Processing**: Core features (speech-to-text transcription, speaker diarization, on-device AI summarization) operate entirely on the user's device. The on-device AI summarization uses Apple's Foundation Models framework and does not communicate with any external servers, including Apple's servers. Audio recordings and processing results are not transmitted externally unless Pro features are used.
-- **Encryption in Transit**: All data transmitted to external services (OpenAI, Firebase) uses HTTPS/TLS encryption.
+- **On-Device Processing Prioritized**: Core features (speech-to-text transcription, real-time speaker diarization, on-device AI summarization) operate entirely on the user's device. The on-device AI summarization uses Apple's Foundation Models framework and does not communicate with any external servers, including Apple's servers. No data is transmitted externally unless Pro cloud features (text correction, GPT summary, translation) are used.
+- **Encryption in Transit**: All data transmitted to external services (OpenAI, Firebase Cloud Functions, Apple) uses HTTPS/TLS encryption.
 - **Encryption at Rest**: Data stored on the device is protected by iOS device encryption. iCloud data is protected by Apple's encryption standards.
-- **Minimal Data Transmission**: Only the minimum data necessary for Pro features (text only) is transmitted to OpenAI. Audio files are never transmitted.
-- **No Operator-Owned Servers**: The Operator does not operate its own servers. All user data is stored on the user's device or in their personal iCloud account.
+- **Minimal Data Transmission**: Only the minimum data necessary for Pro features (text only) is transmitted to OpenAI. Audio files are never transmitted under any circumstances.
+- **Backend Infrastructure (Firebase Cloud Functions)**: The Operator operates Google Firebase Cloud Functions (United States region, project `cleio-prod`) for the following purposes.
+  - OpenAI API proxy (API key protection and credit management)
+  - Subscription verification (Apple StoreKit JWS signature validation)
+  - Credit limit management and deduction logging
+  - This infrastructure is invoked only for transcription/summary/translation requests, and original media such as audio files are never transmitted to it.
 
 **Administrative Safeguards**
 
 - **Internal Management Plan**: The Operator (a sole operator) directly manages all personal information processing activities.
-- **Access Control**: Only the Operator has access to personal information processing systems.
+- **Access Control**: Only the Operator has access to Firebase Cloud Functions and the OpenAI API console.
 - **Vendor Monitoring**: Changes to the data processing policies of OpenAI, Google, and Apple are regularly monitored.
 - **Breach Notification**: In the event of a personal information security incident, the Operator will notify affected individuals without delay.
 
