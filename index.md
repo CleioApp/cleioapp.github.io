@@ -54,8 +54,8 @@ nav_support: "고객 지원"
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(88,86,214,0.1);">👥</div>
-      <h3>자동 화자 분리</h3>
-      <p>누가 말했는지 자동으로 구분해요. 회의 참석자별 발언을 한눈에 확인할 수 있어요.</p>
+      <h3>실시간 화자 분리</h3>
+      <p>녹음 중에도 누가 말하는지 실시간으로 구분해요. 참석자별 발언을 한눈에 확인할 수 있어요.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(52,199,89,0.1);">✨</div>
@@ -64,8 +64,8 @@ nav_support: "고객 지원"
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(255,149,0,0.1);">📁</div>
-      <h3>폴더 정리</h3>
-      <p>업무 회의, 강의, 개인 메모 등 용도별로 폴더를 만들어 정리해요.</p>
+      <h3>보관함</h3>
+      <p>모든 녹음과 요약을 한곳에서 폴더·주제·날짜별로 정리해요.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(255,59,48,0.1);">🔒</div>
@@ -76,6 +76,16 @@ nav_support: "고객 지원"
       <div class="feature-icon" style="background: rgba(0,136,255,0.1);">🌐</div>
       <h3>다국어 지원</h3>
       <p>한국어, 영어, 일본어를 포함한 다양한 언어의 음성을 인식해요.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(88,86,214,0.1);">🌍</div>
+      <h3>다국어 회의 번역 (Pro)</h3>
+      <p>외국어가 섞인 녹음도 원하는 언어로 번역해 음성 기록과 나란히 확인해요.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255,149,0,0.1);">🔔</div>
+      <h3>미리 알림 연동</h3>
+      <p>요약에서 추출한 할 일을 iOS 미리 알림과 양방향으로 동기화해요.</p>
     </div>
   </div>
 </section>
@@ -95,9 +105,10 @@ nav_support: "고객 지원"
       <ul class="pricing-features">
         <li>무제한 녹음</li>
         <li>실시간 음성 기록 (온디바이스)</li>
-        <li>자동 화자 분리</li>
+        <li>실시간 화자 분리</li>
         <li>온디바이스 AI 요약</li>
-        <li>폴더 정리</li>
+        <li>보관함 정리</li>
+        <li>미리 알림 연동</li>
       </ul>
     </div>
     <div class="pricing-card featured">
@@ -108,6 +119,7 @@ nav_support: "고객 지원"
       <ul class="pricing-features">
         <li>Free의 모든 기능</li>
         <li>Cloud AI 고품질 요약</li>
+        <li>다국어 회의 번역</li>
         <li>텍스트 교정 (Cloud AI)</li>
         <li>iCloud 동기화</li>
         <li>Markdown / PDF 내보내기</li>

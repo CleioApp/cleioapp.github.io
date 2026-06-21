@@ -15,18 +15,21 @@ Cleio iOSアプリの利用規約およびプライバシーポリシーを提�
 
 - [개인정보처리방침]({{ site.baseurl }}/privacy-policy/)
 - [이용약관]({{ site.baseurl }}/terms-of-service/)
+- [구독 약관]({{ site.baseurl }}/subscription-terms/)
 - [고객 지원]({{ site.baseurl }}/support/)
 
 ## English (Translation)
 
 - [Privacy Policy]({{ site.baseurl }}/privacy-policy-en/)
 - [Terms of Service]({{ site.baseurl }}/terms-of-service-en/)
+- [Subscription Terms]({{ site.baseurl }}/subscription-terms/)
 - [Support]({{ site.baseurl }}/support-en/)
 
 ## 日本語 (翻訳)
 
 - [プライバシーポリシー]({{ site.baseurl }}/privacy-policy-ja/)
 - [利用規約]({{ site.baseurl }}/terms-of-service-ja/)
+- [サブスクリプション規約]({{ site.baseurl }}/subscription-terms/)
 - [サポート]({{ site.baseurl }}/support-ja/)
 
 ---
