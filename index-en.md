@@ -70,7 +70,7 @@ nav_support: "Support"
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(255,59,48,0.1);">🔒</div>
       <h3>Privacy First</h3>
-      <p>Your audio never leaves your device. All processing happens on-device, so your conversations stay private.</p>
+      <p>Free features run entirely on your device, and your audio files are never sent to our servers or any third party. Pro cloud features send text only, after you agree.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(0,136,255,0.1);">🌐</div>

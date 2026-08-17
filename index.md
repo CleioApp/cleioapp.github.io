@@ -70,7 +70,7 @@ nav_support: "고객 지원"
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(255,59,48,0.1);">🔒</div>
       <h3>프라이버시 우선</h3>
-      <p>음성 데이터가 기기 밖으로 나가지 않아요. 온디바이스 처리로 안전합니다.</p>
+      <p>무료 기능은 전부 기기에서 처리되고, 음성 파일은 운영자의 서버나 제3자에게 전송되지 않습니다. Pro 클라우드 기능은 동의를 받은 뒤 텍스트만 전송합니다.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(0,136,255,0.1);">🌐</div>

@@ -36,7 +36,7 @@ Yes. Recording, transcripts, Speaker Identification, and on-device AI Summary ar
 
 ### Q. Is my voice sent to a server?
 
-No. **Audio files are never transmitted externally under any circumstances.** Free features run 100% on-device, and even Pro subscription cloud AI features only transmit text. For details, please see our [Privacy Policy]({{ site.baseurl }}/privacy-policy-en/).
+No. **Audio files are never sent to our servers or to third parties such as OpenAI.** Free features run 100% on-device, and even Pro subscription cloud AI features only transmit text. If you turn on iCloud sync with Pro, your audio files are stored and synced in your own Apple iCloud (never sent to a third-party server). For details, please see our [Privacy Policy]({{ site.baseurl }}/privacy-policy-en/).
 
 ### Q. The app downloads something on first launch.
 

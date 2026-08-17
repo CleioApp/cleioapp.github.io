@@ -70,7 +70,7 @@ nav_support: "サポート"
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(255,59,48,0.1);">🔒</div>
       <h3>プライバシー最優先</h3>
-      <p>音声データがデバイスの外に出ることはありません。オンデバイス処理で安心してお使いいただけます。</p>
+      <p>無料機能はすべて端末内で処理され、音声ファイルは運営者のサーバーや第三者に送信されません。Pro のクラウド機能は、ご同意のうえテキストのみを送信します。</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background: rgba(0,136,255,0.1);">🌐</div>

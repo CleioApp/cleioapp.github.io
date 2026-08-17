@@ -7,8 +7,14 @@ lang: ko
 
 > **Version / 버전**: 1.2  
 > **Effective Date / 시행일**: June 8, 2026 / 2026년 6월 8일  
-> **Last Updated / 최종 수정일**: 2026-06-08  
+> **Last Updated / 최종 수정일**: 2026-08-13  
 > **Bundle ID**: io.cleio.app
+>
+> **2026-08-05 개정 (Revision) / Correction**: 기존 v1.2 제공 기능(다국어 회의 번역·캘린더 일정 자동 매칭·iPhone 저장 공간 최적화) 기재 누락 보정. 구독 조건·가격·이용자 권리 변경 없음 — 시행일 변경 대상 아님.  
+> Corrected omissions in the Pro feature list (multilingual meeting translation, Calendar event automatic matching, iPhone storage optimization) that were already part of the v1.2 feature set. No change to subscription terms, pricing, or user rights — does not trigger a new effective date.
+>
+> **2026-08-13 개정 (Revision) / Correction**: 앱 UI 표시 명칭 변경에 따라(v1.4) 제7.2조·제8조의 용어를 앱 화면의 "사용량" 표시와 일치시켰습니다(제8조 조 표제를 "Usage System"으로 변경). 사용량 산정 방식·구독 조건·가격·이용자 권리에는 변경이 없습니다 — 시행일 변경 대상 아님.  
+> Aligned the terminology in Sections 7.2 and 8 with the app's on-screen "usage" label following a change to the app's UI labeling (v1.4) (the Section 8 heading was renamed to "Usage System"). No change to how usage is calculated, subscription terms, pricing, or user rights — does not trigger a new effective date.
 
 ---
 
@@ -119,36 +125,44 @@ Cleio Pro subscribers additionally receive:
 
 Cleio Pro 구독자는 다음 기능을 추가로 이용할 수 있습니다:
 
-- **AI Summary (OpenAI GPT)** — Cloud-based, higher-quality AI summaries (credit-based; see Section 8)
-- **AI 요약 (OpenAI GPT)** — 클라우드 기반 고품질 AI 요약 (크레딧 기반, 제8조 참조)
-- **Text correction (OpenAI)** — Cloud-based post-transcription text refinement (credit-based; see Section 8)
-- **텍스트 교정 (OpenAI)** — 클라우드 기반 음성 기록 후처리 교정 (크레딧 기반, 제8조 참조)
-- **Multilingual meeting translation (OpenAI)** — Cloud-based translation of transcripts into a target language (credit-based; see Section 8)
-- **다국어 회의 번역 (OpenAI)** — 음성 기록을 대상 언어로 번역하는 클라우드 기반 번역 (크레딧 기반, 제8조 참조)
+- **AI Summary (OpenAI GPT)** — Cloud-based, higher-quality AI summaries (usage-based; see Section 8)
+- **AI 요약 (OpenAI GPT)** — 클라우드 기반 고품질 AI 요약 (사용량 기반, 제8조 참조)
+- **Text correction (OpenAI)** — Cloud-based post-transcription text refinement (usage-based; see Section 8)
+- **텍스트 교정 (OpenAI)** — 클라우드 기반 음성 기록 후처리 교정 (사용량 기반, 제8조 참조)
+- **Multilingual meeting translation (OpenAI)** — Cloud-based translation of transcripts into a target language (usage-based; see Section 8)
+- **다국어 회의 번역 (OpenAI)** — 음성 기록을 대상 언어로 번역하는 클라우드 기반 번역 (사용량 기반, 제8조 참조)
+- **Calendar event automatic matching** — Automatically link recordings with Calendar (EventKit) events (requires Calendar permission and opt-in)
+- **캘린더 일정 자동 매칭** — 녹음을 캘린더(EventKit) 일정과 자동으로 연결 (캘린더 권한 및 설정 활성화 필요)
 - **iCloud sync** — Synchronize recordings and data across your Apple devices
 - **iCloud 동기화** — Apple 기기 간 녹음 및 데이터 동기화
+- **iPhone storage optimization** — Free up device storage by removing the local copy of audio files already stored in iCloud (requires iCloud sync)
+- **iPhone 저장 공간 최적화** — 이미 iCloud에 저장된 오디오 파일의 로컬 사본을 정리하여 기기 저장 공간 확보 (iCloud 동기화 필요)
 - **Export (Markdown / PDF)** — Export summaries and transcripts
 - **내보내기 (Markdown / PDF)** — 요약 및 음성 기록 내보내기
 
 ---
 
-## 8. Credit System / 크레딧 시스템
+## 8. Usage System / 사용량 시스템
 
-Certain Pro features — specifically OpenAI-powered AI summaries and text correction — operate on a **credit-based system**.
+Certain Pro features — specifically OpenAI-powered AI summaries, text correction, and multilingual meeting translation — operate on a **usage-based system** with a monthly limit.
 
-특정 Pro 기능, 즉 OpenAI 기반 AI 요약 및 텍스트 교정은 **크레딧 기반 시스템**으로 운영됩니다.
+특정 Pro 기능, 즉 OpenAI 기반 AI 요약, 텍스트 교정 및 다국어 회의 번역은 월별 한도가 있는 **사용량 기반 시스템**으로 운영됩니다.
 
-- Credits are allocated periodically to active Pro subscribers.
-- 크레딧은 활성 Pro 구독자에게 주기적으로 할당됩니다.
+**Note:** Internally, this mechanism is also referred to as "credits" (for example, in support communications); the app itself displays it to you as "usage." Both terms refer to the same monthly allowance described below.
 
-- Each use of an OpenAI-powered feature consumes credits based on usage volume.
-- OpenAI 기반 기능을 사용할 때마다 사용량에 따라 크레딧이 차감됩니다.
+**참고:** 이 체계는 내부적으로 "크레딧"이라고도 부르며(예: 고객 지원 응대 시), 앱 화면에는 "사용량"으로 표시됩니다. 두 용어는 아래에서 설명하는 동일한 월간 한도를 가리킵니다.
 
-- Unused credits do not carry over between billing periods unless otherwise stated.
-- 미사용 크레딧은 별도 명시가 없는 한 다음 결제 주기로 이월되지 않습니다.
+- A usage allowance is granted periodically to active Pro subscribers.
+- 활성 Pro 구독자에게는 사용 한도가 주기적으로 부여됩니다.
 
-- When credits are exhausted, OpenAI-powered features become unavailable until the next credit allocation. On-device features (WhisperKit STT, Foundation Models summary) remain fully available at all times.
-- 크레딧이 소진되면 다음 크레딧 할당 시까지 OpenAI 기반 기능을 사용할 수 없습니다. 온디바이스 기능(WhisperKit 음성 기록, Foundation Models 요약)은 항상 이용 가능합니다.
+- Each use of an OpenAI-powered feature consumes a portion of your usage allowance based on usage volume.
+- OpenAI 기반 기능을 사용할 때마다 사용량에 따라 한도가 차감됩니다.
+
+- Unused usage allowance does not carry over between billing periods unless otherwise stated.
+- 미사용 한도는 별도 명시가 없는 한 다음 결제 주기로 이월되지 않습니다.
+
+- When you reach the usage limit, OpenAI-powered features become unavailable until the next usage allowance is granted. On-device features (WhisperKit STT, Foundation Models summary) remain fully available at all times.
+- 사용 한도에 도달하면 다음 사용량이 부여될 때까지 OpenAI 기반 기능을 사용할 수 없습니다. 온디바이스 기능(WhisperKit 음성 기록, Foundation Models 요약)은 항상 이용 가능합니다.
 
 ---
 
@@ -158,11 +172,14 @@ If you cancel your Cleio Pro subscription or it expires, the following applies:
 
 Cleio Pro 구독을 해지하거나 만료될 경우 다음 사항이 적용됩니다:
 
-- **iCloud sync will be deactivated.** Data already stored locally on your device will be retained, but synchronization across devices will stop.
-- **iCloud 동기화가 비활성화됩니다.** 기기에 이미 로컬로 저장된 데이터는 유지되지만, 기기 간 동기화는 중단됩니다.
+- **iCloud sync will be deactivated.** Data already stored locally on your device will be retained, but synchronization across devices will stop. iPhone storage optimization, which depends on iCloud sync, will also stop; any audio files still stored only in iCloud remain accessible and downloadable.
+- **iCloud 동기화가 비활성화됩니다.** 기기에 이미 로컬로 저장된 데이터는 유지되지만, 기기 간 동기화는 중단됩니다. iCloud 동기화에 의존하는 iPhone 저장 공간 최적화도 함께 중단되며, iCloud에만 저장된 오디오 파일은 계속 접근 및 다운로드가 가능합니다.
 
-- **OpenAI-powered features will be deactivated.** Cloud-based AI summaries and text correction will no longer be available.
-- **OpenAI 기반 기능이 비활성화됩니다.** 클라우드 기반 AI 요약 및 텍스트 교정을 더 이상 사용할 수 없습니다.
+- **Calendar event automatic matching will be deactivated.** Existing links between recordings and calendar events are preserved, but no new automatic matching will occur.
+- **캘린더 일정 자동 매칭이 비활성화됩니다.** 기존에 연결된 녹음-일정 매칭 정보는 유지되지만, 신규 자동 매칭은 더 이상 이루어지지 않습니다.
+
+- **OpenAI-powered features will be deactivated.** Cloud-based AI summaries, text correction, and multilingual meeting translation will no longer be available.
+- **OpenAI 기반 기능이 비활성화됩니다.** 클라우드 기반 AI 요약, 텍스트 교정 및 다국어 회의 번역을 더 이상 사용할 수 없습니다.
 
 - **Existing results are preserved.** Summaries, corrected transcripts, and other content generated while you were a Pro subscriber will remain accessible.
 - **기존 결과는 보존됩니다.** Pro 구독 기간 중 생성된 요약, 교정된 음성 기록 및 기타 콘텐츠는 계속 열람 가능합니다.
@@ -217,8 +234,8 @@ Cleio는 음성 기록, 화자 분리, 텍스트 교정, 요약에 인공지능 
 - The App's on-device features (recording, on-device STT, speaker diarization, on-device AI summary) function without an internet connection.
 - 앱의 온디바이스 기능(녹음, 온디바이스 음성 기록, 화자 분리, 온디바이스 AI 요약)은 인터넷 연결 없이 작동합니다.
 
-- Pro cloud features (OpenAI summary, text correction, iCloud sync) require an active internet connection and are subject to the availability of Apple and third-party servers.
-- Pro 클라우드 기능(OpenAI 요약, 텍스트 교정, iCloud 동기화)은 인터넷 연결이 필요하며 Apple 및 타사 서버의 가용성에 따라 달라집니다.
+- Pro cloud features (OpenAI summary, text correction, multilingual meeting translation, iCloud sync) require an active internet connection and are subject to the availability of Apple and third-party servers.
+- Pro 클라우드 기능(OpenAI 요약, 텍스트 교정, 다국어 회의 번역, iCloud 동기화)은 인터넷 연결이 필요하며 Apple 및 타사 서버의 가용성에 따라 달라집니다.
 
 - We do not guarantee uninterrupted or error-free operation of the Service. Temporary service interruptions may occur due to maintenance, updates, or circumstances beyond our control.
 - 서비스의 중단 없는 또는 오류 없는 운영을 보장하지 않습니다. 유지보수, 업데이트 또는 당사의 통제 범위를 벗어난 사유로 인해 일시적인 서비스 중단이 발생할 수 있습니다.
