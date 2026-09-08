@@ -5,9 +5,9 @@ permalink: /subscription-terms/
 lang: ko
 ---
 
-> **Version / 버전**: 1.2  
-> **Effective Date / 시행일**: June 8, 2026 / 2026년 6월 8일  
-> **Last Updated / 최종 수정일**: 2026-08-13  
+> **Version / 버전**: 1.3  
+> **Effective Date / 시행일**: September 9, 2026 / 2026년 9월 9일  
+> **Last Updated / 최종 수정일**: 2026-09-08  
 > **Bundle ID**: io.cleio.app
 >
 > **2026-08-05 개정 (Revision) / Correction**: 기존 v1.2 제공 기능(다국어 회의 번역·캘린더 일정 자동 매칭·iPhone 저장 공간 최적화) 기재 누락 보정. 구독 조건·가격·이용자 권리 변경 없음 — 시행일 변경 대상 아님.  
@@ -15,6 +15,15 @@ lang: ko
 >
 > **2026-08-13 개정 (Revision) / Correction**: 앱 UI 표시 명칭 변경에 따라(v1.4) 제7.2조·제8조의 용어를 앱 화면의 "사용량" 표시와 일치시켰습니다(제8조 조 표제를 "Usage System"으로 변경). 사용량 산정 방식·구독 조건·가격·이용자 권리에는 변경이 없습니다 — 시행일 변경 대상 아님.  
 > Aligned the terminology in Sections 7.2 and 8 with the app's on-screen "usage" label following a change to the app's UI labeling (v1.4) (the Section 8 heading was renamed to "Usage System"). No change to how usage is calculated, subscription terms, pricing, or user rights — does not trigger a new effective date.
+>
+> **v1.3 (2026-09-04) / Revision**: Apple Private Cloud(Apple Inc.의 Private Cloud Compute 기술 기반) AI 요약을 Pro 기능에 추가했습니다(제7.2조·제8조·제9조 개정) — 설정에서 이용자가 직접 선택하는 옵트인 기능이며, 기본값은 그대로 GPT입니다. 이 기능은 본 개정 시점까지 어떠한 이용자에게도 제공된 바 없으며(App Store에 아직 배포되지 않음), 해당 기능을 포함한 앱 버전이 실제로 배포된 시점부터 동작합니다. 새로운 처리 목적이 추가되는 개정이므로 단순 정정이 아닌 버전 상향(1.2 → 1.3)으로 반영하며, 개인정보처리방침·이용약관과 동일하게 시행일을 2026-09-04로 갱신합니다.  
+> Added Apple Private Cloud AI summarization (built on Apple Inc.'s Private Cloud Compute technology) to the Pro features (Sections 7.2, 8, and 9 amended) — an opt-in feature the user selects directly in Settings; the default remains GPT. As of this amendment, this feature has not been made available to any user (it has not yet shipped to the App Store) and will operate only once the app version containing it is actually released. Because this adds a new processing purpose, it is reflected as a version increment (1.2 → 1.3) rather than a mere correction, with the effective date updated to 2026-09-04 to match the Privacy Policy and Terms of Service.
+>
+> **2026-09-08 개정 (Revision) / Correction**: 캘린더 일정 자동 매칭이 2026-09-01자로 Pro 전용 기능에서 무료 기능으로 전환된 사실을 반영했습니다(제7.1조로 이동, 제7.2조·제9조에서 삭제). 무료 이용자에게 제공 범위가 넓어지는 변경이며, 구독 가격·결제 조건·이용자 권리에는 변경이 없습니다 — 시행일 변경 대상 아님.  
+> Reflected that Calendar event automatic matching became a free feature as of 2026-09-01, having previously been Pro-exclusive (moved to Section 7.1; removed from Sections 7.2 and 9). This broadens what free users receive and makes no change to subscription pricing, payment terms, or user rights — does not trigger a new effective date.
+>
+> **2026-09-08 개정 (2) / Correction**: 시행일을 실제 게시일에 맞춰 2026-09-04 → **2026-09-09**로 조정했습니다. 위 개정본은 게시 전이어서 2026-09-04 자로 시행된 바 없으며, 개정 내용 자체에는 변경이 없습니다.  
+> The effective date has been adjusted from 2026-09-04 to **2026-09-09** to match the actual publication date. The amendments above had not been published and therefore never took effect as of 2026-09-04; their substance is unchanged.
 
 ---
 
@@ -118,6 +127,8 @@ The following features are available without a subscription:
 - **화자 분리 (Sortformer)** — 온디바이스 화자 구별
 - **AI Summary (Foundation Models)** — On-device AI-generated summaries
 - **AI 요약 (Foundation Models)** — 온디바이스 AI 요약 생성
+- **Calendar event automatic matching** — Automatically link recordings with Calendar (EventKit) events (requires Calendar permission and opt-in)
+- **캘린더 일정 자동 매칭** — 녹음을 캘린더(EventKit) 일정과 자동으로 연결 (캘린더 권한 및 설정 활성화 필요)
 
 ### 7.2 Pro-Exclusive Features / Pro 전용 기능
 
@@ -127,12 +138,12 @@ Cleio Pro 구독자는 다음 기능을 추가로 이용할 수 있습니다:
 
 - **AI Summary (OpenAI GPT)** — Cloud-based, higher-quality AI summaries (usage-based; see Section 8)
 - **AI 요약 (OpenAI GPT)** — 클라우드 기반 고품질 AI 요약 (사용량 기반, 제8조 참조)
+- **AI Summary (Apple Private Cloud)** — An alternative, opt-in cloud summarization engine built on Apple Inc.'s Private Cloud Compute technology; you select it directly in Settings (the default remains GPT). It does not draw on the usage allowance described in Section 8 and is instead subject to a separate limit set by Apple (see Section 8).
+- **AI 요약 (Apple Private Cloud)** — Apple Inc.의 Private Cloud Compute 기술에 기반한, 설정에서 이용자가 직접 선택하는 대안 클라우드 요약 엔진입니다(기본값은 그대로 GPT). 제8조에서 설명하는 사용 한도를 소모하지 않으며, 대신 Apple이 별도로 정하는 한도가 적용됩니다(제8조 참조).
 - **Text correction (OpenAI)** — Cloud-based post-transcription text refinement (usage-based; see Section 8)
 - **텍스트 교정 (OpenAI)** — 클라우드 기반 음성 기록 후처리 교정 (사용량 기반, 제8조 참조)
 - **Multilingual meeting translation (OpenAI)** — Cloud-based translation of transcripts into a target language (usage-based; see Section 8)
 - **다국어 회의 번역 (OpenAI)** — 음성 기록을 대상 언어로 번역하는 클라우드 기반 번역 (사용량 기반, 제8조 참조)
-- **Calendar event automatic matching** — Automatically link recordings with Calendar (EventKit) events (requires Calendar permission and opt-in)
-- **캘린더 일정 자동 매칭** — 녹음을 캘린더(EventKit) 일정과 자동으로 연결 (캘린더 권한 및 설정 활성화 필요)
 - **iCloud sync** — Synchronize recordings and data across your Apple devices
 - **iCloud 동기화** — Apple 기기 간 녹음 및 데이터 동기화
 - **iPhone storage optimization** — Free up device storage by removing the local copy of audio files already stored in iCloud (requires iCloud sync)
@@ -164,6 +175,10 @@ Certain Pro features — specifically OpenAI-powered AI summaries, text correcti
 - When you reach the usage limit, OpenAI-powered features become unavailable until the next usage allowance is granted. On-device features (WhisperKit STT, Foundation Models summary) remain fully available at all times.
 - 사용 한도에 도달하면 다음 사용량이 부여될 때까지 OpenAI 기반 기능을 사용할 수 없습니다. 온디바이스 기능(WhisperKit 음성 기록, Foundation Models 요약)은 항상 이용 가능합니다.
 
+**Apple Private Cloud AI summarization is separate from this usage system.** It does not draw on or deplete the usage allowance described above, and using it does not affect how much allowance you have left for OpenAI-powered features. It is instead subject to its own limit that Apple sets and administers independently; Apple does not disclose an exact remaining count or reset cycle, so we do not state one here (for example, we do not describe it as "daily" or "monthly"). If you select "Automatic" as your summary engine, note that when Apple Private Cloud is unavailable, the app falls back to GPT without asking first, and that use does draw on the usage allowance described above.
+
+**Apple Private Cloud 기반 AI 요약은 이 사용량 시스템과는 별개입니다.** 위에서 설명한 사용 한도를 소모하지 않으며, 이 기능을 사용해도 OpenAI 기반 기능에 남은 사용량에는 영향을 주지 않습니다. 대신 Apple이 독자적으로 정하고 관리하는 별도의 한도가 적용되며, Apple은 정확한 잔여 횟수나 초기화 주기를 공개하지 않으므로 당사도 이를 "일간" 또는 "월간"과 같이 특정하여 안내하지 않습니다. 요약 엔진을 "자동"으로 선택한 경우, Apple Private Cloud를 사용할 수 없을 때는 별도로 묻지 않고 GPT로 전환되며, 이 경우의 사용은 위에서 설명한 사용 한도를 소모한다는 점에 유의하시기 바랍니다.
+
 ---
 
 ## 9. Downgrade Policy / 다운그레이드 정책
@@ -175,11 +190,11 @@ Cleio Pro 구독을 해지하거나 만료될 경우 다음 사항이 적용됩�
 - **iCloud sync will be deactivated.** Data already stored locally on your device will be retained, but synchronization across devices will stop. iPhone storage optimization, which depends on iCloud sync, will also stop; any audio files still stored only in iCloud remain accessible and downloadable.
 - **iCloud 동기화가 비활성화됩니다.** 기기에 이미 로컬로 저장된 데이터는 유지되지만, 기기 간 동기화는 중단됩니다. iCloud 동기화에 의존하는 iPhone 저장 공간 최적화도 함께 중단되며, iCloud에만 저장된 오디오 파일은 계속 접근 및 다운로드가 가능합니다.
 
-- **Calendar event automatic matching will be deactivated.** Existing links between recordings and calendar events are preserved, but no new automatic matching will occur.
-- **캘린더 일정 자동 매칭이 비활성화됩니다.** 기존에 연결된 녹음-일정 매칭 정보는 유지되지만, 신규 자동 매칭은 더 이상 이루어지지 않습니다.
-
 - **OpenAI-powered features will be deactivated.** Cloud-based AI summaries, text correction, and multilingual meeting translation will no longer be available.
 - **OpenAI 기반 기능이 비활성화됩니다.** 클라우드 기반 AI 요약, 텍스트 교정 및 다국어 회의 번역을 더 이상 사용할 수 없습니다.
+
+- **Apple Private Cloud AI summarization will also be deactivated.** This engine option requires an active Pro subscription and will no longer be available.
+- **Apple Private Cloud 기반 AI 요약도 함께 비활성화됩니다.** 이 엔진 선택지는 활성 Pro 구독을 필요로 하며, 더 이상 사용할 수 없습니다.
 
 - **Existing results are preserved.** Summaries, corrected transcripts, and other content generated while you were a Pro subscriber will remain accessible.
 - **기존 결과는 보존됩니다.** Pro 구독 기간 중 생성된 요약, 교정된 음성 기록 및 기타 콘텐츠는 계속 열람 가능합니다.
@@ -234,8 +249,8 @@ Cleio는 음성 기록, 화자 분리, 텍스트 교정, 요약에 인공지능 
 - The App's on-device features (recording, on-device STT, speaker diarization, on-device AI summary) function without an internet connection.
 - 앱의 온디바이스 기능(녹음, 온디바이스 음성 기록, 화자 분리, 온디바이스 AI 요약)은 인터넷 연결 없이 작동합니다.
 
-- Pro cloud features (OpenAI summary, text correction, multilingual meeting translation, iCloud sync) require an active internet connection and are subject to the availability of Apple and third-party servers.
-- Pro 클라우드 기능(OpenAI 요약, 텍스트 교정, 다국어 회의 번역, iCloud 동기화)은 인터넷 연결이 필요하며 Apple 및 타사 서버의 가용성에 따라 달라집니다.
+- Pro cloud features (OpenAI summary, Apple Private Cloud summary, text correction, multilingual meeting translation, iCloud sync) require an active internet connection and are subject to the availability of Apple and third-party servers.
+- Pro 클라우드 기능(OpenAI 요약, Apple Private Cloud 요약, 텍스트 교정, 다국어 회의 번역, iCloud 동기화)은 인터넷 연결이 필요하며 Apple 및 타사 서버의 가용성에 따라 달라집니다.
 
 - We do not guarantee uninterrupted or error-free operation of the Service. Temporary service interruptions may occur due to maintenance, updates, or circumstances beyond our control.
 - 서비스의 중단 없는 또는 오류 없는 운영을 보장하지 않습니다. 유지보수, 업데이트 또는 당사의 통제 범위를 벗어난 사유로 인해 일시적인 서비스 중단이 발생할 수 있습니다.

@@ -8,9 +8,9 @@ alt_links:
   - { url: /terms-of-service-ja/, label: 日本語, hreflang: ja }
 ---
 
-> **Version**: 1.2
-> **Effective Date**: 2026-06-08
-> **Last Updated**: 2026-08-13
+> **Version**: 1.4
+> **Effective Date**: 2026-09-09
+> **Last Updated**: 2026-09-08
 >
 > This document is a translation provided for convenience only. The Korean-language version is the authoritative original. In case of any conflict between this translation and the Korean original, the Korean original shall prevail.
 >
@@ -19,6 +19,12 @@ alt_links:
 > **Correction on 2026-08-13**: Following a change to the app's UI labeling (v1.4), related terminology in these Terms has been aligned with the app's on-screen "usage" label (Article 4.2 and Article 10). This does not change how the monthly limit is calculated, the subscription terms, pricing, or your rights, so the effective date remains unchanged.
 >
 > **Key changes in v1.2**: Added multilingual meeting translation (Pro), two-way Reminders (EventKit) synchronization, disclosure of Calendar (EventKit) automatic event matching, iPhone storage optimization (Pro), and disclosure of Firebase Cloud Functions backend infrastructure.
+>
+> **v1.4 (2026-09-09)**: Added System Audio Capture (Pro, macOS only) to the Pro plan — a feature that captures the audio of another app the user directly selects on the "New Recording" screen, and additionally records the microphone if the user turns on "Include My Voice" (Article 4.2, Article 7, Article 10, and Article 14 amended). The app captured may include the voices of third parties, such as call or meeting participants, and Article 7 now states that compliance with applicable law when recording those third parties is the user's responsibility. This feature is included in the first release of the macOS version of Cleio (v1.5.0) and has not been made available to any user before that release. Because this is a substantive addition to the list of Pro features and to user responsibilities, it is reflected as a version increment (1.3 → 1.4) rather than a mere correction, with the effective date updated to 2026-09-09.
+>
+> **v1.3 (2026-09-04)**: Added Apple Private Cloud AI summarization (built on Apple Inc.'s Private Cloud Compute technology) to the Pro plan — an opt-in feature the user selects directly in Settings; the default remains GPT (Article 4.2, Article 6, and Article 10 amended). As of this amendment, this feature has not been made available to any user (it has not yet shipped to the App Store) and will operate only once the app version containing it is actually released. Because this is a substantive addition to the list of Pro features and to how data is processed, it is reflected as a version increment (1.2 → 1.3) rather than a mere correction, with the effective date updated to 2026-09-04.
+>
+> **Correction on 2026-09-08**: The effective date has been adjusted from 2026-09-04 to **2026-09-09** to match the actual publication date. The amendments above had not been published and therefore never took effect as of 2026-09-04; their substance is unchanged.
 
 ---
 
@@ -58,7 +64,7 @@ alt_links:
 
 ## Article 1. General Provisions
 
-These Terms of Service (the "Terms") govern your use of the Cleio mobile application (the "App" or "Service") operated by Kidae Lee (the "Operator"). Cleio is an iOS application that provides voice recording, speech-to-text transcription, speaker diarization, and AI summarization.
+These Terms of Service (the "Terms") govern your use of the Cleio mobile application (the "App" or "Service") operated by Kidae Lee (the "Operator"). Cleio is an iOS and macOS application that provides voice recording, speech-to-text transcription, speaker diarization, and AI summarization.
 
 By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the App.
 
@@ -100,16 +106,19 @@ All audio processing under the Free plan occurs entirely on your device. No audi
 The Pro plan includes all Free plan features plus:
 
 - OpenAI GPT-powered AI summarization (text only transmitted; no audio transmitted)
+- Apple Private Cloud AI summarization (when directly selected by the user in Settings; text only transmitted; no audio transmitted — see Article 6-3 of the Privacy Policy)
 - OpenAI-powered transcription text correction (text only transmitted)
 - OpenAI-powered multilingual meeting translation (text segments only transmitted)
 - iCloud synchronization (real-time data and iPhone storage optimization)
 - Export capabilities (Markdown/PDF)
+- MCP Local Integration (macOS only, default OFF) — lets another program you connect directly on this Mac query your recording library and edit its title, folder, domain, and action-item completion (audio files not provided — see Article 6-4 of the Privacy Policy)
+- System Audio Capture (macOS only) — captures the audio of another app you directly select on the "New Recording" screen, and additionally records the microphone if you turn on "Include My Voice" (see Article 6-5 of the Privacy Policy)
 
-Under the Pro plan, transcribed text (not audio files) may be transmitted to OpenAI's API for processing. **Audio files are never transmitted to the Operator's servers or to OpenAI** (if a Pro subscriber enables iCloud sync, audio files are stored on the user's own Apple iCloud).
+Under the Pro plan, transcribed text (not audio files) may be transmitted to OpenAI's API, or, when the user directly selects it in Settings, to Apple Private Cloud, for processing. **Audio files are never transmitted to the Operator's servers, to OpenAI, or to Apple** (if a Pro subscriber enables iCloud sync, audio files are stored on the user's own Apple iCloud).
 
 **Usage Limits**
 
-OpenAI-powered AI summarization, text correction, and multilingual translation within the Pro plan are subject to a monthly usage limit. When you reach the usage limit, these features become unavailable until your usage resets at the start of the next billing cycle. On-device features (speech-to-text transcription, speaker diarization, and on-device AI summarization) are always available regardless of usage.
+OpenAI-powered AI summarization, text correction, and multilingual translation within the Pro plan are subject to a monthly usage limit. When you reach the usage limit, these features become unavailable until your usage resets at the start of the next billing cycle. Apple Private Cloud AI summarization (when directly selected by the user) is subject to a separate limit that Apple sets on its own; the exact reset cycle is not publicly disclosed. On-device features (speech-to-text transcription, speaker diarization, and on-device AI summarization) are always available regardless of usage.
 
 **Pricing**
 
@@ -140,7 +149,7 @@ Prices may vary by region and currency. The applicable price will be displayed i
 
 2. **Limited License.** You grant the Operator a limited, non-exclusive license to process your User Content solely for the purpose of providing the Service (e.g., transmitting text to AI services for Pro features). This license terminates when you delete your content or stop using the Service.
 
-3. **No Training Use.** The Operator does not use your User Content to train AI models. Text transmitted to OpenAI for Pro features is processed in accordance with OpenAI's API data usage policies, which do not use API inputs for model training.
+3. **No Training Use.** The Operator does not use your User Content to train AI models. Text transmitted to OpenAI for Pro features is processed in accordance with OpenAI's API data usage policies, which do not use API inputs for model training. Text transmitted to Apple Private Cloud, when you directly select it in Settings, is processed in accordance with Apple's published policies (see Article 6-3 of the Privacy Policy for details).
 
 4. **User Responsibility.** You are solely responsible for your User Content and for ensuring you have obtained all necessary rights and consents to record, store, and process such content.
 
@@ -152,7 +161,9 @@ Prices may vary by region and currency. The applicable price will be displayed i
 
 2. **Third-Party Voices.** Recordings may include the voices of third parties. It is your responsibility to obtain the consent of any person whose voice is recorded, as required by applicable law. Under the Korean Protection of Communications Secrets Act, recording a conversation between others without being a party to that conversation is prohibited without consent.
 
-3. **No Legal Advice.** The App does not provide legal advice. If you are uncertain about the legality of recording in your situation, please consult a legal professional.
+3. **System Audio Capture (Pro, macOS Only).** The same responsibilities and principles in paragraphs 1 and 2 above apply equally when you use System Audio Capture to capture the audio of another app, such as a call or video conferencing app. Consent requirements for recording calls and meetings vary by country and region, and in some jurisdictions (for example, two-party consent requirements in certain U.S. states) recording without the consent of all participants may be unlawful. You are responsible for disclosing that a recording is being made to the participants of the call or meeting you capture, and for obtaining any consent required under applicable local law. The App's visual indicator during recording (menu bar and recording screen) may help with this disclosure but does not substitute for any legally required consent.
+
+4. **No Legal Advice.** The App does not provide legal advice. If you are uncertain about the legality of recording in your situation, please consult a legal professional.
 
 ---
 
@@ -178,6 +189,7 @@ You agree not to:
 6. Use the App in any manner that could damage, overburden, or impair the Service;
 7. Distribute, sublicense, or resell access to the App or its features to any third party;
 8. Use automated means to access or interact with the App, except as explicitly permitted.
+9. Share your MCP Local Integration access token with others, or allow anyone other than yourself to use it to access your library.
 
 Violation of these Terms may result in the suspension or termination of your access to the Service.
 
@@ -187,7 +199,7 @@ Violation of these Terms may result in the suspension or termination of your acc
 
 1. **On-Device Processing (Free Plan).** Under the Free plan, all audio processing, transcription, real-time speaker diarization, and summarization occur entirely on your device. No audio or text data is transmitted to external servers.
 
-2. **Cloud Processing (Pro Plan).** Under the Pro plan, transcribed text may be transmitted to OpenAI's API for enhanced summarization, text correction, and multilingual translation. Audio files are never transmitted to the Operator's servers or to OpenAI.
+2. **Cloud Processing (Pro Plan).** Under the Pro plan, transcribed text may be transmitted to OpenAI's API for enhanced summarization, text correction, and multilingual translation. In addition, when you directly select it in Settings, AI summarization may be processed via Apple Private Cloud (built on Apple Inc.'s Private Cloud Compute technology) — this path is transmitted directly from your device to Apple's servers without passing through the Operator's backend, and is subject to a separate usage limit set by Apple. Audio files are never transmitted to the Operator's servers, to OpenAI, or to Apple. See Articles 6-2 and 6-3 of the Privacy Policy for details.
 
 3. **Two-Way Reminders Synchronization (opt-in).** Action items may be synchronized two-way with the iOS Reminders app (EventKit). This feature requires Reminders permission; core functionality (recording, transcription, summarization) continues to work without this permission.
 
@@ -195,11 +207,15 @@ Violation of these Terms may result in the suspension or termination of your acc
 
 5. **Analytics and Crash Reporting.** The App uses Firebase Analytics and Crashlytics to collect anonymized usage data and crash reports for the purpose of improving the Service. This data does not include recordings or transcription content. The App does not currently provide an in-app toggle to disable Firebase Analytics; to opt out, please contact kdwara@icloud.com.
 
-6. **Backend Infrastructure.** The Operator operates Google Firebase Cloud Functions (United States region, project `cleio-prod`) for backend functions including OpenAI API proxy, subscription verification, and usage management. This infrastructure is invoked only when Pro cloud features are requested.
+6. **Backend Infrastructure.** The Operator operates Google Firebase Cloud Functions (United States region, project `cleio-prod`) for backend functions including OpenAI API proxy, subscription verification, and usage management. This infrastructure is invoked only when Pro cloud features are requested. Apple Private Cloud AI summarization does not pass through this infrastructure; it is transmitted directly from your device to Apple's servers.
 
 7. **iCloud Sync (Pro Plan).** Pro subscribers may use iCloud synchronization and iPhone storage optimization. Data is stored on Apple's iCloud infrastructure, governed by Apple's privacy policies.
 
-8. **Privacy Policy.** For detailed information about our data practices, please refer to the Privacy Policy available within the App.
+8. **MCP Local Integration (Pro, User's Choice, macOS only).** You may allow another program you connect directly on this Mac to query your recording library (transcripts, summaries, action items, folder list, etc.; audio files excluded) and edit a limited set of items. The default is OFF, and access is protected by a server that responds only to this Mac and an access token known only to you. How a program you connect subsequently handles that data is outside the Operator's control and is governed by that program's own terms and privacy policy. See Article 6-4 of the Privacy Policy for details.
+
+9. **System Audio Capture (Pro, User's Choice, macOS Only).** You may capture the audio output of another app you directly select on the "New Recording" screen, and the microphone is additionally recorded if you turn on "Include My Voice." Captured audio is processed the same way as microphone recordings — by default it is stored and processed only on this Mac, and is stored and synced to your own Apple iCloud Drive only if you, as a Pro subscriber, have enabled iCloud sync. A persistent visual indicator is shown in the menu bar and the recording screen while capture is in progress. The app you capture may include the voices of third parties, such as call or meeting participants, and complying with applicable law in that regard is your responsibility under Article 7. See Article 6-5 of the Privacy Policy for details.
+
+10. **Privacy Policy.** For detailed information about our data practices, please refer to the Privacy Policy available within the App.
 
 ---
 
@@ -243,7 +259,9 @@ To the extent permitted by applicable law, the Operator shall not be liable for 
 2. Any inaccuracy in transcription, speaker diarization, or AI-generated summaries;
 3. Any unauthorized access to or alteration of your data;
 4. Any third-party services accessed through the App;
-5. Any other matter relating to the App.
+5. The way a program you have directly connected via MCP Local Integration uses, stores, or retransmits data obtained through that feature, and any resulting consequences;
+6. Any failure by you to comply with applicable law in recording or processing the voices of third parties through System Audio Capture (macOS, Pro);
+7. Any other matter relating to the App.
 
 The Operator's liability is limited to the extent permitted by applicable law. Nothing in this article limits your rights under mandatory consumer protection laws.
 
