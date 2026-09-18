@@ -4,9 +4,9 @@ title: 구독 약관 / Subscription Terms
 permalink: /subscription-terms/
 lang: ko
 ---
-> **Version / 버전**: 1.3  
-> **Effective Date / 시행일**: September 9, 2026 / 2026년 9월 9일  
-> **Last Updated / 최종 수정일**: 2026-09-11  
+> **Version / 버전**: 1.4  
+> **Effective Date / 시행일**: September 19, 2026 / 2026년 9월 19일  
+> **Last Updated / 최종 수정일**: 2026-09-19  
 > **Bundle ID**: io.cleio.app
 ---
 
@@ -37,15 +37,18 @@ Prices are in Korean Won (KRW). Actual charges may vary by region and currency b
 
 ## 3. Free Trial / 무료 체험
 
-New subscribers are eligible for a **3-day free trial** of Cleio Pro. The free trial is available once per Apple ID.
+New subscribers are eligible for a **7-day free trial** of Cleio Pro. The free trial is available once per Apple ID.
 
-신규 구독자는 **3일간의 Cleio Pro 무료 체험**을 이용할 수 있습니다. 무료 체험은 Apple ID당 1회 제공됩니다.
+신규 구독자는 **7일간의 Cleio Pro 무료 체험**을 이용할 수 있습니다. 무료 체험은 Apple ID당 1회 제공됩니다.
 
-- **The free trial automatically converts to a paid subscription** at the end of the 3-day trial period unless cancelled at least 24 hours before the trial expires.
-- **무료 체험은 3일 체험 기간 종료 시 자동으로 유료 구독으로 전환됩니다.** 체험 종료 최소 24시간 전에 해지하지 않으면 자동으로 결제됩니다.
+- **The free trial automatically converts to a paid subscription** at the end of the 7-day trial period unless cancelled at least 24 hours before the trial expires.
+- **무료 체험은 7일 체험 기간 종료 시 자동으로 유료 구독으로 전환됩니다.** 체험 종료 최소 24시간 전에 해지하지 않으면 자동으로 결제됩니다.
 
 - The subscription fee for the selected plan will be charged to your Apple ID account upon conversion.
 - 선택한 상품의 구독 요금은 전환 시 귀하의 Apple ID 계정으로 청구됩니다.
+
+- **If you started your free trial before September 19, 2026, your trial continues under the terms in effect when you started it** (including its original length); this change applies only to trials that begin on or after that date.
+- **2026년 9월 19일 이전에 무료 체험을 시작한 경우, 시작 당시 적용되던 조건(기존 체험 기간 포함)이 그대로 유지됩니다.** 이번 변경은 그 이후에 시작되는 체험에만 적용됩니다.
 
 ---
 
