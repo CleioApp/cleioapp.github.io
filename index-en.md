@@ -4,10 +4,10 @@ permalink: /en/
 lang: en-US
 og_locale: en_US
 shots: /assets/shots/en
-meta_title: "Cleio — AI Meeting Notes for iPhone and Mac"
-meta_description: "Record, and the transcript and AI summary write themselves. Recording, transcripts, speaker identification, and on-device AI summaries are free and unlimited."
-og_title: "Cleio — AI Meeting Notes for iPhone and Mac"
-og_description: "Record, and the transcript and AI summary write themselves. Free and unlimited to start."
+meta_title: "Cleio — Notes That Record Too"
+meta_description: "Record right inside a note, and link recordings, events, and notes in one document. Recording, transcripts, and note writing are free. On iPhone, iPhone Duo, iPad, and Mac."
+og_title: "Cleio — Notes That Record Too"
+og_description: "Voice and text in one place. Record right inside a note, and link recordings, events, and notes in one document."
 nav_features: "Features"
 nav_pricing: "Pricing"
 nav_support: "Support"
@@ -15,7 +15,7 @@ nav_download: "Download free"
 support_url: /support-en/
 privacy_url: /privacy-policy-en/
 terms_url: /terms-of-service-en/
-footer_tagline: "Notes that listen and summarize"
+footer_tagline: "Notes that record too"
 footer_product: "Product"
 footer_support: "Support"
 footer_legal: "Legal"
@@ -27,9 +27,9 @@ footer_subscription: "Subscription Terms"
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">iPhone · Mac</span>
-    <h1>Hit record. <em>Keep the notes.</em></h1>
-    <p class="lede">Record a meeting, a lecture, an interview — the transcript and the AI summary are written as you go. Recording, transcripts, speaker identification, and AI summaries are free and unlimited.</p>
+    <span class="eyebrow">iPhone · iPhone Duo · iPad · Mac</span>
+    <h1>Voice and text, <em>in one place</em></h1>
+    <p class="lede">Record right while you write a note, then link recordings, events, and other notes into a single document. The more you use it, the more your records connect.</p>
     <div class="hero-actions">
       <a href="{{ site.app_store_url }}" class="badge-store" aria-label="Download Cleio on the App Store">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="180" height="52">
@@ -40,10 +40,10 @@ footer_subscription: "Subscription Terms"
 
   <div class="stage">
     <div class="mac">
-      <img src="{{ page.shots }}/mac-library.png" alt="Cleio on Mac showing the summary library beside a meeting summary" width="1800" height="1125" fetchpriority="high">
+      <img src="{{ page.shots }}/mac-links.png" alt="Cleio on Mac showing a note with event, recording, and note cards" width="1800" height="1125" fetchpriority="high">
     </div>
     <div class="phone">
-      <img src="{{ page.shots }}/summary.png" alt="Cleio on iPhone showing a meeting summary" width="552" height="1200" loading="lazy">
+      <img src="{{ page.shots }}/note-recording.png" alt="Cleio on iPhone recording while writing a note" width="552" height="1200" loading="lazy">
     </div>
   </div>
 </section>
@@ -53,12 +53,12 @@ footer_subscription: "Subscription Terms"
   <div class="wrap">
     <div class="strip-inner">
       <div class="strip-item">
-        <b>Unlimited</b>
-        <span>No caps on recording, transcripts, speaker identification, or AI summaries</span>
+        <b>Note writing is free</b>
+        <span>Recording, transcripts, note writing, and export cost nothing</span>
       </div>
       <div class="strip-item">
-        <b>On-device</b>
-        <span>Every free feature runs on your device</span>
+        <b>Standard Markdown</b>
+        <span>Saved as standard Markdown — export, and other Markdown apps can open it</span>
       </div>
       <div class="strip-item">
         <b>No sign-up</b>
@@ -74,54 +74,72 @@ footer_subscription: "Subscription Terms"
 
     <div class="row">
       <div class="row-copy">
-        <span class="eyebrow">AI summaries</span>
-        <h3>An hour of talking, on a single page</h3>
-        <p>When the recording stops, Cleio lays out the key points, the discussion, the decisions, and the to-dos — shaped for the kind of conversation it was. It works out whether that was a business meeting, a lecture, or an interview.</p>
+        <span class="eyebrow">Record while you write<span class="tag-pro">PRO</span></span>
+        <h3>Record and take notes on one screen</h3>
+        <p>Start recording straight from a note and a recording card appears inside it. Let the recording catch the talking, and write down only what matters.</p>
         <ul class="row-list">
-          <li>Automatic categories — meetings, lectures and seminars, interviews, memos</li>
-          <li>Pick the summary length and the writing style, then run it again</li>
-          <li>Edit the summary in Markdown while the original stays untouched</li>
+          <li>Pause and stop from the recording card in your note</li>
+          <li>The transcript builds in real time as you record (transcripts are free)</li>
+          <li>On Mac, keep the live transcript window beside your note</li>
         </ul>
       </div>
       <div class="row-shot">
         <div class="phone-static">
-          <img src="{{ page.shots }}/summary.png" alt="An AI summary organized by category" width="552" height="1200" loading="lazy">
+          <img src="{{ page.shots }}/note-recording.png" alt="A note with a recording-in-progress card" width="552" height="1200" loading="lazy">
         </div>
       </div>
     </div>
 
     <div class="row flip">
       <div class="row-copy">
-        <span class="eyebrow">Live transcripts</span>
-        <h3>It is already writing while you record</h3>
-        <p>Words land in the transcript as they are spoken, and speakers are separated on the spot. It behaves exactly the same with no internet connection at all — on a plane, for instance.</p>
+        <span class="eyebrow">Markdown notes</span>
+        <h3>Tables, checklists, math — all in Markdown</h3>
+        <p>Write with formatting you can see, saved as standard Markdown. Export a note and other Markdown apps can open it.</p>
         <ul class="row-list">
-          <li>Transcription that runs alongside the recording</li>
-          <li>Live speaker identification, so each voice keeps its own thread</li>
-          <li>Follow the waveform as you listen, and split or merge sections as you edit</li>
+          <li>Tables, checklists, math, code blocks, and callouts</li>
+          <li>Photos, files, document scans, and drawings in a single note</li>
+          <li>Gather scattered notes with #tags</li>
         </ul>
       </div>
       <div class="row-shot">
         <div class="phone-static">
-          <img src="{{ page.shots }}/recording.png" alt="A live transcript with speaker identification during a recording" width="552" height="1200" loading="lazy">
+          <img src="{{ page.shots }}/markdown.png" alt="A Markdown note with a table, a checklist, math, and code" width="552" height="1200" loading="lazy">
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="row-copy">
-        <span class="eyebrow">Keyword map<span class="tag-pro">PRO</span></span>
-        <h3>Find the conversation, not the title</h3>
-        <p>Cleio draws a map between the keywords in your summaries and the recordings they came from. You do not have to remember the title — remembering the topic is enough.</p>
+        <span class="eyebrow">Link it all<span class="tag-pro">PRO</span></span>
+        <h3>Link notes, recordings, and events in one document</h3>
+        <p>Put the meeting's event, its recording, and related notes right inside the meeting note as cards. When you look for it later, everything connects.</p>
         <ul class="row-list">
-          <li>Tap a keyword and every recording that touched it gathers together</li>
-          <li>Themes that keep coming back across meetings become visible</li>
-          <li>The same map on iPhone and on Mac</li>
+          <li>Note Links · Recording Links · Event Linking</li>
+          <li>Jump from a card straight to that note or recording</li>
+          <li>Expand an event card to see that event's recordings</li>
         </ul>
       </div>
       <div class="row-shot">
         <div class="phone-static">
-          <img src="{{ page.shots }}/keywords.png" alt="The keyword map linking summary keywords to recordings" width="552" height="1200" loading="lazy">
+          <img src="{{ page.shots }}/links.png" alt="A note with event, recording, and note cards" width="552" height="1200" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="row flip">
+      <div class="row-copy">
+        <span class="eyebrow">AI summaries · Polish Note<span class="tag-pro">PRO</span></span>
+        <h3>Expand a recording card, and the summary is right there</h3>
+        <p>Expand a recording card in your note and the key points are waiting. AI can tidy a hastily written note for easy reading, and you can compare it with the original and undo.</p>
+        <ul class="row-list">
+          <li>Cloud AI summaries also pull out decisions and action items</li>
+          <li>Polish Note — compare with the original and undo the whole thing</li>
+          <li>Choose your engine — on-device · Apple Private Cloud Compute · OpenAI GPT</li>
+        </ul>
+      </div>
+      <div class="row-shot">
+        <div class="phone-static">
+          <img src="{{ page.shots }}/summary-card.png" alt="A recording card in a note, expanded to show its summary" width="552" height="1200" loading="lazy">
         </div>
       </div>
     </div>
@@ -133,33 +151,39 @@ footer_subscription: "Subscription Terms"
 <section class="grid-sec">
   <div class="wrap">
     <div class="section-head">
-      <h2>What you need after the recording</h2>
-      <p>Recording is the easy part. Finding it again, fixing it, and moving it somewhere useful is the rest.</p>
+      <h2>An archive that grows as you write</h2>
+      <p>Writing, recording, linking, and finding it again — all in one app.</p>
     </div>
     <div class="grid">
 
       <div class="card">
-        <div class="ico"><svg><use href="#i-pen"/></svg></div>
-        <h3>Transcript editing</h3>
-        <p>Fix a misheard word on the spot. Split and merge sections, undo, and find and replace.</p>
+        <div class="ico"><svg><use href="#i-image"/></svg></div>
+        <h3>Photos, scans, drawings</h3>
+        <p>Add photos and files, scan paper documents, and even sketch by hand — all inside a note.</p>
       </div>
 
       <div class="card">
-        <div class="ico"><svg><use href="#i-library"/></svg></div>
-        <h3>Library</h3>
-        <p>Every recording and summary in one place, sorted by folder, topic, or date — with a separate Summary Library that holds nothing but summaries.</p>
+        <div class="ico"><svg><use href="#i-hash"/></svg></div>
+        <h3>#Tags</h3>
+        <p>Type a #tag in your text and notes with the same tag gather together in the Sidebar and in Search.</p>
       </div>
 
       <div class="card">
-        <div class="ico"><svg><use href="#i-calendar"/></svg></div>
-        <h3>Calendar</h3>
-        <p>Link a recording to the event it belongs to and browse them by month. Included for free.</p>
+        <div class="ico"><svg><use href="#i-grid"/></svg></div>
+        <h3>Gallery view</h3>
+        <p>Skim notes and recordings as preview tiles. You can switch back to a list any time.</p>
       </div>
 
       <div class="card">
-        <div class="ico"><svg><use href="#i-import"/></svg></div>
-        <h3>Import audio</h3>
-        <p>Analyze the recordings you already have. There is nothing to record twice.</p>
+        <div class="ico"><svg><use href="#i-search"/></svg></div>
+        <h3>Search</h3>
+        <p>Search across titles, text, and transcripts. Results open straight from the built-in search on iPhone and Mac too.</p>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg><use href="#i-export"/></svg></div>
+        <h3>Export and share</h3>
+        <p>Export notes and summaries as text, Markdown, or PDF. Included for free.</p>
       </div>
 
       <div class="card">
@@ -169,27 +193,29 @@ footer_subscription: "Subscription Terms"
       </div>
 
       <div class="card">
-        <div class="ico"><svg><use href="#i-search"/></svg></div>
-        <h3>Search</h3>
-        <p>Search across titles, transcripts, and summaries. Results open straight from iPhone's built-in search too.</p>
+        <div class="ico"><svg><use href="#i-users"/></svg></div>
+        <h3>Speaker Identification<span class="tag-pro">PRO</span></h3>
+        <p>See who said what, with the transcript organized by speaker.</p>
       </div>
 
       <div class="card">
         <div class="ico"><svg><use href="#i-languages"/></svg></div>
-        <h3>Multilingual meeting translation<span class="tag-pro">PRO</span></h3>
+        <h3>Multilingual translation<span class="tag-pro">PRO</span></h3>
         <p>Translate a recording with mixed languages into the one you choose, shown beside the transcript.</p>
       </div>
 
       <div class="card">
         <div class="ico"><svg><use href="#i-cloud"/></svg></div>
         <h3>iCloud sync<span class="tag-pro">PRO</span></h3>
-        <p>Record on iPhone, pick it up on Mac. Optimize storage to keep originals in iCloud and your device light.</p>
+        <p>Write on iPhone, pick it up on Mac. Your notes and recordings sync through your own iCloud.</p>
       </div>
 
-      <div class="card">
-        <div class="ico"><svg><use href="#i-export"/></svg></div>
-        <h3>Export and share<span class="tag-pro">PRO</span></h3>
-        <p>Export to Markdown or PDF, send to-dos to Reminders, and email the summary to everyone who attended.</p>
+      <div class="card wide">
+        <div class="ico"><svg><use href="#i-columns"/></svg></div>
+        <div>
+          <h3>iPhone Duo and iPad</h3>
+          <p>Unfold iPhone Duo or use iPad to see the Sidebar, list, and content side by side. Fold it for a layout that fits the outer display.</p>
+        </div>
       </div>
 
     </div>
@@ -202,23 +228,23 @@ footer_subscription: "Subscription Terms"
     <div class="section-head">
       <span class="eyebrow">macOS</span>
       <h2>On Mac it all fits in one window</h2>
-      <p>Pick a folder on the left, a recording in the middle, and read the summary on the right.</p>
+      <p>Pick notes, recordings, or tags in the Sidebar, choose from the list in the middle, and write on the right.</p>
     </div>
     <div class="mac">
-      <img src="{{ page.shots }}/mac-library.png" alt="The Mac app showing the summary library and a summary in detail" width="1800" height="1125" loading="lazy">
+      <img src="{{ page.shots }}/mac-summary.png" alt="The Mac app showing a note with a recording card's summary expanded" width="1800" height="1125" loading="lazy">
     </div>
     <div class="mac-sub">
       <div>
-        <h4>Capture other apps <span class="tag-pro">PRO</span></h4>
-        <p>Record the other side of a video call or a phone call too. Microphone recording stays free on Mac.</p>
+        <h4>Video call audio too <span class="tag-pro">PRO</span></h4>
+        <p>Record the other side of a video call or a phone call together with your own voice. Microphone recording stays free on Mac.</p>
       </div>
       <div>
-        <h4>Built for the keyboard</h4>
-        <p>⌘N opens a new recording, Space plays it back, and ⌘S saves the summary you just edited.</p>
+        <h4>Connect your AI apps <span class="tag-pro">PRO</span></h4>
+        <p>With MCP Integration, AI apps that support MCP can read the notes and recordings on this Mac and write notes. It is off by default.</p>
       </div>
       <div>
         <h4>Continues from iPhone <span class="tag-pro">PRO</span></h4>
-        <p>Turn on iCloud sync and it stops mattering which device you recorded on.</p>
+        <p>Turn on iCloud sync and it stops mattering which device you wrote on.</p>
       </div>
     </div>
   </div>
@@ -230,16 +256,16 @@ footer_subscription: "Subscription Terms"
     <div class="privacy-box">
       <div>
         <div class="privacy-mark"><svg><use href="#i-shield"/></svg></div>
-        <h2>We don't send your voice</h2>
+        <h2>We don't send your voice to our servers</h2>
       </div>
       <ul class="privacy-list">
         <li>
-          <b>Audio files are never sent to our servers or to OpenAI</b>
-          <p>Free transcripts, speaker identification, and AI summaries all run on your device. With Pro, turning on iCloud sync stores and syncs your audio in your own Apple iCloud.</p>
+          <b>Recorded audio is never sent to the operator's servers or to OpenAI</b>
+          <p>With Pro, turning on iCloud sync stores and syncs your audio files and notes in your own iCloud.</p>
         </li>
         <li>
-          <b>Pro cloud features send text only</b>
-          <p>Text is sent only after you agree to it, and it is not used for model training.</p>
+          <b>Cloud AI sends text only, after you agree and turn it on or run it yourself</b>
+          <p>Text (never audio) goes to OpenAI or Apple only when you process summaries, Polish Note, Text Correction, or translation with cloud AI. Text sent to OpenAI is not used for model training.</p>
         </li>
         <li>
           <b>There is no account</b>
@@ -254,24 +280,22 @@ footer_subscription: "Subscription Terms"
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <h2>Start free. Upgrade if you need to.</h2>
-      <p>Pro does not unlock the basics — it adds cloud quality and continuity across your devices.</p>
+      <h2>Start free. Go Pro to keep it connected.</h2>
+      <p>Recording and note writing are free. Pro adds linking your records and organizing them with AI.</p>
     </div>
     <div class="plans">
 
       <div class="plan">
         <h3>Free</h3>
         <div class="price">Free</div>
-        <p class="price-alt">No limits</p>
-        <p class="plan-desc">On-device AI carries a whole meeting from start to finish.</p>
+        <p class="price-alt">No limits on recording or notes</p>
+        <p class="plan-desc">Everything you need to write, record, find, and export is free.</p>
         <ul>
-          <li>Unlimited recording</li>
-          <li>Live transcripts and speaker identification</li>
-          <li>On-device AI summaries</li>
-          <li>On-device text correction</li>
-          <li>Transcript and summary editing</li>
-          <li>Library, search, and calendar</li>
-          <li>Audio file import</li>
+          <li>Recording and live transcripts (speech-to-text)</li>
+          <li>Markdown notes — photos, files, document scans, drawings</li>
+          <li>#Tags · Gallery · folders · search</li>
+          <li>Summary editing</li>
+          <li>Text, Markdown, and PDF export</li>
           <li>Siri, Shortcuts, Lock Screen controls</li>
           <li>Microphone recording on Mac</li>
         </ul>
@@ -281,30 +305,30 @@ footer_subscription: "Subscription Terms"
         <span class="plan-flag">Annual saves more</span>
         <h3>Pro</h3>
         <div class="price">Monthly<span> or annual</span></div>
-        <p class="price-alt">Prices vary by region — see the App Store</p>
-        <p class="plan-desc">Everything in Free, plus cloud quality and continuity across devices.</p>
+        <p class="price-alt">Prices vary by region — see the App Store · 7-day free trial</p>
+        <p class="plan-desc">Everything in Free, plus linking and AI organizing.</p>
         <ul>
-          <li>High-quality Cloud AI summaries</li>
-          <li>Multilingual meeting translation</li>
-          <li>Cloud AI text correction</li>
-          <li>Keyword map</li>
+          <li>Record from a note · Note Links · Recording Links</li>
+          <li>Event Linking</li>
+          <li>AI summaries (including on-device) · Polish Note</li>
+          <li>Speaker Identification</li>
+          <li>Multilingual translation · Text Correction</li>
           <li>iCloud sync and storage optimization</li>
-          <li>Markdown and PDF export</li>
-          <li>Reminders export and summary email to attendees</li>
-          <li>App audio capture on Mac</li>
+          <li>Audio file import</li>
+          <li>App Audio recording on Mac · MCP Integration</li>
         </ul>
       </div>
 
     </div>
-    <p class="plan-note">Subscriptions renew automatically and can be canceled any time up to 24 hours before the next billing date. Manage them in Settings &gt; Apple ID &gt; Subscriptions. See the <a href="/subscription-terms/" style="color:var(--brand-text)">Subscription Terms</a> for the details.</p>
+    <p class="plan-note">New subscribers get a 7-day free trial, then are charged automatically for the plan they chose. The free trial is available once per Apple ID, and the subscription converts to paid unless canceled at least 24 hours before the trial ends. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Payment is charged to your Apple ID account at confirmation of purchase. Subscriptions can be managed in Settings &gt; Apple ID &gt; Subscriptions. See the <a href="/subscription-terms/" style="color:var(--brand-text)">Subscription Terms</a> for the details.</p>
   </div>
 </section>
 
 <!-- ── CTA ── -->
 <section class="cta">
   <div class="wrap">
-    <h2>Stop taking notes in the meeting</h2>
-    <p>Press record. Cleio writes the rest down.</p>
+    <h2>Record and write, starting with your next meeting</h2>
+    <p>You write what matters. Cleio keeps what was said. It all stays in one note.</p>
     <a href="{{ site.app_store_url }}" class="badge-store" aria-label="Download Cleio on the App Store">
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="180" height="52">
     </a>
