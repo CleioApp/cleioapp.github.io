@@ -13,10 +13,10 @@ alt_links:
 > **Contact**: kdwara@icloud.com
 > **Address**: 7, Yangdal-ro, Gwangmyeong-si, Gyeonggi-do, Republic of Korea
 > **Business Registration No.**: 611-48-01233
-> **Version**: 1.5
-> **Effective Date**: 2026-09-09
+> **Version**: 1.6
+> **Effective Date**: 2026-11-12
 > **※ The "Version" above refers to the version of this Privacy Policy document, which is separate from the app version.**
-> **Last Updated**: 2026-09-11
+> **Last Updated**: 2026-11-04
 >
 > This document is a translation provided for convenience only. The Korean-language version is the authoritative original. In case of any conflict between this translation and the Korean original, the Korean original shall prevail.
 ---
@@ -64,21 +64,33 @@ By using the App, you acknowledge that you have read and understood this Privacy
 |------|---------|---------|-------------------|-----------|
 | Audio recordings (M4A) | Core service — voice recording | Local device + iCloud (Pro) | None | Until deleted by user |
 | System audio capture (macOS, Pro) | Captures another app's audio, chosen directly by the user on the "New Recording" screen (Article 6-5) | Local device + iCloud Drive (Pro, if iCloud sync is on) | None | Until deleted by user |
-| Transcription text | Speech-to-text conversion results | Local (SwiftData) + iCloud (Pro) | OpenAI API (Pro text correction / summarization / translation; text only); a program the user has connected, if MCP Local Integration is on (Article 6-4) | Until deleted by user |
-| AI summary text | Meeting/conversation summaries | Local (SwiftData) + iCloud (Pro) | OpenAI API or Private Cloud Compute (Pro summarization, depending on the engine the user selects in Settings; text only); a program the user has connected, if MCP Local Integration is on (Article 6-4) | Until deleted by user |
-| Action items (to-dos) | To-do items extracted from summaries | Local (SwiftData) + iCloud (Pro) + Reminders app (EventKit, when the user syncs) | None (except a program the user has connected, if MCP Local Integration is on — Pro, default OFF, Article 6-4) | Until deleted by user |
+| Transcription text | Speech-to-text conversion results | Local (SwiftData) + iCloud (Pro) | OpenAI API (Pro text correction / GPT summarization / translation; text only) or Private Cloud Compute (Pro summarization; text only; Article 6-3); a program the user has connected, if MCP Local Integration is on (Article 6-4) | Until deleted by user |
+| AI summary text | Meeting/conversation summaries | Local (SwiftData) + iCloud (Pro) | OpenAI API or Private Cloud Compute (Pro summarization, depending on the "AI Engine" setting; text only — nothing is transmitted when the on-device engine is used; Article 6-3); a program the user has connected, if MCP Local Integration is on (Article 6-4) | Until deleted by user |
+| Action items (to-dos) | To-do items extracted from summaries | Local (SwiftData) + iCloud (Pro) | None (except a program the user has connected, if MCP Local Integration is on — Pro, default OFF, Article 6-4) | Until deleted by user |
 | Speaker diarization results | Per-utterance speaker identification | Local (SwiftData) + iCloud (Pro) | None (except a program the user has connected, if MCP Local Integration is on — Pro, default OFF, Article 6-4) | Until deleted by user |
 | Calendar event matching data (event title, identifier, date/time) | Automatic matching of recordings with Calendar events | Local (SwiftData) + iCloud (Pro) | None (except that, where an automatically matched event title is used as a recording's displayed title, that title may be exposed to a connected program for users who have turned MCP Local Integration on — Article 6-4) | Until deleted by user |
 | Translation text (Pro) | Display original/translated text for multilingual meetings | Local (SwiftData) + iCloud (Pro) | OpenAI API (when user requests translation; text only) | Until deleted by user |
+| Notes (title, body, folder, and the links between a note and the recordings or notes attached to it) | Writing and keeping documents the user writes themselves | Local (SwiftData) + iCloud (Pro) | None (except that the text of a note is transmitted when the user directly runs Polish Note (Pro) with a cloud engine (OpenAI or Private Cloud Compute) — Articles 6-2 and 6-3; also, a program the user has connected can read and write notes if MCP Local Integration is on — Pro, default OFF, Article 6-4) | Until deleted by user |
+| Photos and files added to notes and summaries | Storing the photos and attached files the user adds to a note (or, earlier, a summary) body | Local device + iCloud Drive (only when a Pro subscriber has turned on iCloud sync and the records are synced) | None (photo files and the contents of files are not sent to cloud AI features, and photo files are not made available through MCP Local Integration either — Articles 6-2 and 6-4) | Until deleted by user |
 | App settings | User preferences | UserDefaults + iCloud KVS (Pro) | None | Until app deletion |
 
-**Audio files are never transmitted to the Operator's servers, to OpenAI, or to Apple.** If a Pro subscriber enables iCloud sync, audio files are stored and synced to the user's own Apple iCloud. Only text is sent to OpenAI or Private Cloud Compute, and **it is transmitted only after the separate consent under Article 6-6 has been given and the user directly enables, selects, or invokes the relevant feature in Settings** (see **Article 6-2** for text correction/translation/GPT summarization, and **Article 6-3** for Private Cloud Compute summarization).
+**Audio files are never transmitted to the Operator's servers, to OpenAI, or to Apple.** If a Pro subscriber enables iCloud sync, audio files are stored and synced to the user's own Apple iCloud. Only text is sent to OpenAI or Private Cloud Compute, and **it is transmitted only after the separate consent under Article 6-6 has been given and the user directly enables the relevant feature in Settings or directly runs it on screen** (see **Article 6-2** for text correction/translation/GPT summarization/Polish Note, and **Article 6-3** for Private Cloud Compute summarization/Polish Note).
 
-**Transcription text and AI summaries may contain sensitive information.** What is recorded is decided by the user, and the Operator does not screen its contents in advance. When such text is sent to a cloud AI service, the Operator obtains **separate consent** under Article 23 of the Personal Information Protection Act — see **Article 6-6** for the scope of sensitive information that may be included and for how to give or withdraw that consent. If cloud AI features are not used, this text never leaves the device (and, for Pro subscribers, the user's own iCloud).
+**Transcription text, AI summaries, and notes may contain sensitive information.** What is recorded is decided by the user, and the Operator does not screen its contents in advance. When such text is sent to a cloud AI service, the Operator obtains **separate consent** under Article 23 of the Personal Information Protection Act — see **Article 6-6** for the scope of sensitive information that may be included and for how to give or withdraw that consent. If cloud AI features are not used, this text is not transmitted to the Operator's servers, to OpenAI, or to Apple (Private Cloud Compute); if a Pro subscriber enables iCloud sync, it is stored in the user's own iCloud.
 
 **Audio recorded via System Audio Capture (Pro, macOS only) may include the voices of third parties**, such as call or meeting participants. For details on where this audio is processed and the user's responsibilities, see **Article 6-5**.
 
 **Calendar event data is read only on-device and is never transmitted to the Operator's servers.** When Calendar permission is granted, the App reads event information solely to match recordings with Calendar events, and caches only the matching event's title, identifier, and date/time on the device; for Pro subscribers this cached metadata syncs only to the user's own Apple iCloud. Denying Calendar permission does not affect core features such as recording, transcription, and summarization.
+
+**Notes are sent to cloud AI features only when the user directly runs Polish Note (Pro) and has given the cloud AI consent (Article 6-6); photo files are never sent.** Notes go to the following recipients.
+
+- **OpenAI, Inc. (United States)** — only when GPT is the Polish Note engine the user chose. The transmission is relayed through the Operator's backend (the OpenAI proxy, Article 13), and the Operator does not store the note.
+- **Apple Inc. (United States)** — only when Private Cloud Compute is the Polish Note engine the user chose. The note is transmitted directly from the user's device, without passing through the Operator's backend (Article 6-3).
+- **The user's own Apple iCloud** — if a Pro subscriber enables iCloud sync, notes sync to iCloud, and photos and files sync to iCloud Drive.
+- **Programs the user has connected** — only if the user has turned on MCP Local Integration (Pro, default OFF) themselves can a connected program read and write notes (photo files are not provided and cannot be created through it — Article 6-4).
+- **No recipient** — if the user chooses "On-Device" as the Polish Note engine under "AI Engine", nothing is transmitted off the device (see "Cloud-Free Alternatives" in Article 6-2).
+
+What a cloud engine receives is the note's title (first line) and body text (including inline code and inline math within the body), the titles of recording cards and note links in the body, the file names of file cards, and the text of links. Photo files, the contents of files, tables, code blocks, and math blocks, link addresses, calendar event information, audio files, and the transcripts and summaries of other recordings are not transmitted; photos, cards, and links are handled only as placeholders such as "photo" or "link", and the App puts the originals back in their places when the result returns.
 
 ### 2.2 Automatically Collected Data
 
@@ -106,16 +118,15 @@ When the user explicitly enables "Storage Optimization," the Operator processes 
 
 The Operator processes personal information for the following purposes.
 
-1. **Core Service Delivery** — Audio recording, speech-to-text transcription, real-time speaker diarization, and AI summarization.
-2. **Pro Subscription Features** — OpenAI-powered text correction, GPT summarization, and multilingual meeting translation; Private Cloud Compute AI summarization (when selected by the user in Settings); iCloud synchronization (real-time data and storage optimization); export capabilities (Markdown/PDF).
-3. **Two-Way Reminders Synchronization (opt-in)** — Two-way sync of action items with the Reminders app (EventKit).
-4. **Calendar Event Automatic Matching (opt-in)** — Automatically linking recordings with Calendar (EventKit) events for easier management.
-5. **Service Improvement** — Analysis of anonymized usage patterns to enhance features and user experience.
-6. **Stability and Performance** — Collection of crash reports and performance metrics to maintain and improve app reliability.
-7. **Payment Processing** — Managing subscription status through Apple's StoreKit.
-8. **User Preferences** — Storing and synchronizing app settings across devices (Pro).
-9. **Providing MCP Local Integration (Pro, User's Choice)** — Allowing a program the user has connected directly on this Mac to query the recording library and edit titles, folders, domains, and action item completion.
-10. **Providing System Audio Capture (Pro, macOS only, User's Choice)** — Capturing the audio of another app the user selects directly on the "New Recording" screen, to support recording meetings and calls.
+1. **Core Service Delivery** — Audio recording, speech-to-text transcription, notes (including photos, files, and tags), summary editing, export (text, Markdown, PDF), and search and folders (speaker diarization and AI summarization are Pro features — see item 2).
+2. **Pro Subscription Features** — speaker diarization; on-device AI summarization; OpenAI-powered text correction, GPT summarization, and multilingual meeting translation; Private Cloud Compute AI summarization (when the user chooses it under the "AI Engine" setting); Polish Note (with the engine the user chooses — on-device, Private Cloud Compute, or OpenAI GPT); note links and recording links; calendar event linking; audio file import; iCloud synchronization (real-time data and storage optimization).
+3. **Calendar Event Linking and Automatic Matching (Pro, opt-in)** — Automatically linking recordings with Calendar (EventKit) events for easier management.
+4. **Service Improvement** — Analysis of anonymized usage patterns to enhance features and user experience.
+5. **Stability and Performance** — Collection of crash reports and performance metrics to maintain and improve app reliability.
+6. **Payment Processing** — Managing subscription status through Apple's StoreKit.
+7. **User Preferences** — Storing and synchronizing app settings across devices (Pro).
+8. **Providing MCP Local Integration (Pro, User's Choice)** — Allowing a program the user has connected directly on this Mac to query the recording and note library, edit recording titles, folders, and domains, and create or edit notes.
+9. **Providing System Audio Capture (Pro, macOS only, User's Choice)** — Capturing the audio of another app the user selects directly on the "New Recording" screen, to support recording meetings and calls.
 
 ---
 
@@ -126,14 +137,14 @@ Personal information is retained until the purpose of collection is fulfilled.
 | Data Category | Retention Period | Destruction Method |
 |---------------|-----------------|-------------------|
 | Audio recordings | Until deleted by user within the App | Removed from local storage and iCloud |
-| Transcription text, AI summaries, speaker diarization results, action items, translation text, calendar matching data | Until deleted by user within the App | Removed from SwiftData and iCloud |
+| Photos and files added to notes and summaries | Until the related recording or note is deleted by the user within the App | Removed from local storage and iCloud Drive |
+| Transcription text, AI summaries, speaker diarization results, action items, translation text, calendar matching data, notes | Until deleted by user within the App | Removed from SwiftData and iCloud |
 | App settings | Until app is deleted from device | Cleared on app uninstallation |
 | Firebase Analytics data | Per Google's data retention policy (default: 14 months) | Automatic expiration |
 | Firebase Crashlytics data | Per Google's data retention policy (default: 90 days) | Automatic expiration |
 | Firebase Cloud Functions logs (OpenAI proxy, payment verification) | Per Google Cloud Logging default retention (30 days); no personally identifying content | Automatic expiration |
-| OpenAI API transmitted data (text correction, summarization, translation) | Deleted within 30 days per OpenAI's API data policy; not used for model training | Automatic deletion by OpenAI |
-| Private Cloud Compute transmitted data (AI summarization, when selected by the user in Settings) | Per Apple's published policy — **not independently verified by the Operator** (see Article 6-3) | Not retained after processing, per Apple's published policy |
-| Reminders (EventKit) data | Per the Reminders app's retention policy | Deleted when the user removes the item in the Reminders app, or when the user excludes it during a sync or deletes the action item in Cleio |
+| OpenAI API transmitted data (text correction, summarization, translation, Polish Note) | Deleted within 30 days per OpenAI's API data policy; not used for model training | Automatic deletion by OpenAI |
+| Private Cloud Compute transmitted data (AI summarization and Polish Note, when the "AI Engine" setting is Private Cloud Compute — including where an "Automatic" setting chosen before the app update falls through to it) | Per Apple's published policy — **not independently verified by the Operator** (see Article 6-3) | Not retained after processing, per Apple's published policy |
 
 If retention is required by law, the relevant data is stored separately and destroyed after the statutory retention period expires.
 
@@ -158,9 +169,9 @@ The Operator entrusts certain data processing to the following service providers
 
 | Processor | Entrusted Task | Retention | Contact |
 |-----------|---------------|-----------|---------|
-| OpenAI, Inc. (United States) | Pro: transcription text correction, AI summarization, multilingual translation (text only; no audio) | Deleted within 30 days; not used for model training | privacy@openai.com |
+| OpenAI, Inc. (United States) | Pro: transcription text correction, AI summarization, multilingual translation, Polish Note (note text) (text only; no audio) | Deleted within 30 days; not used for model training | privacy@openai.com |
 | Google LLC (United States) | Firebase analytics, crash reporting, performance monitoring, and Cloud Functions infrastructure operation (OpenAI proxy, subscription verification, usage management) | Per Google's retention policy | https://firebase.google.com/support/privacy |
-| Apple Inc. (United States) | StoreKit payment processing, iCloud storage (Pro), Reminders (EventKit) data storage, Private Cloud Compute AI summarization (Pro, when directly selected by the user in Settings) | Per Apple's retention policy | https://www.apple.com/privacy |
+| Apple Inc. (United States) | StoreKit payment processing, iCloud storage (Pro), Private Cloud Compute AI summarization and Polish Note (Pro, when the "AI Engine" setting is Private Cloud Compute — including where an "Automatic" setting chosen before the app update falls through to it — or when the user directly chooses and runs it) | Per Apple's retention policy | https://www.apple.com/privacy |
 
 The Operator maintains agreements (or applicable standard terms, the Apple App Store agreement, and the OpenAI Data Processing Addendum) with processors governing data protection obligations and oversees their compliance.
 
@@ -179,12 +190,15 @@ The Operator provides the following Pro features that utilize OpenAI, Inc.'s (Un
 | Feature | Transmitted Data | Recipient | Default State |
 |---------|-----------------|-----------|---------------|
 | Text correction (Pro) | Transcription text (STT), language settings, user term dictionary | OpenAI, Inc. (United States) | **Inactive** (default OFF) |
-| AI summary (Pro) | Transcription text (STT), recording title, domain tag, summary length setting | OpenAI, Inc. (United States) | **Only when explicitly invoked by the user** |
+| AI summary (Pro) | Transcription text (STT), recording title, domain tag, summary length setting | OpenAI, Inc. (United States) | **Only when explicitly invoked by the user**, and only when the engine is GPT (GPT is the default engine if no engine has been chosen in Settings, and this includes an "Automatic" setting chosen before the app update that falls through to GPT — see Article 6-3) |
 | Multilingual meeting translation (Pro) | Transcript segment (source text), source language, target language | OpenAI, Inc. (United States) | **Automatically runs if the auto-translate toggle is on** (default OFF), **or runs manually when the user directly requests a translation** |
+| Polish Note (Pro) | The note's title (first line) and body text, the titles of recording cards and note links in the body, the file names of file cards, and the text of links (excluding photo files, the contents of files, tables, code blocks, and math blocks, link addresses, calendar event information, audio files, and the contents of other recordings) | OpenAI, Inc. (United States) | **Only when explicitly invoked by the user**, and only when the engine for Polish Note is GPT (GPT is the default engine if no engine has been chosen in Settings — see Article 6-3) |
 
-**Automatic domain detection**: When AI summary is run, the full transcription text is also sent to OpenAI in order to automatically determine the summary domain. This processing is part of running "AI summary" above and does not create a new, separate point of transmission. When Private Cloud Compute summarization is selected, this automatic detection is not performed (see Article 6-3, "Relationship to Domain Detection").
+**Automatic domain detection**: When an AI summary is run with GPT, the full transcription text is also sent to OpenAI in order to automatically determine the summary domain. This processing is part of running "AI summary" above and does not create a new, separate point of transmission. When a summary is produced on-device or via Private Cloud Compute, this automatic detection is not performed (see Article 6-3, "Relationship to Domain Detection").
 
 **Not transmitted**: audio files, account identifiers (email, IDFA, etc.), device identifiers.
+
+**Polish Note**: When the user directly runs "Polish Note" on a note, the items in the table above are transmitted to the engine the user chose for Polish Note under "AI Engine" in Settings (chosen separately from the voice-summary engine). Inline code and inline math within the body text are text and are therefore transmitted, but the contents of code blocks, math blocks, tables, and files are not. Photo files are not transmitted and are handled only as placeholders such as "photo"; when the result returns, the App puts the original photos, cards, and links back in place. A note may contain sensitive information or third-party information that the user wrote (Article 6-6). The GPT path is relayed through the Operator's Firebase Cloud Functions backend (Article 13) and draws on Pro usage (credits); the Private Cloud Compute path does not pass through this backend and does not draw on credits. If the engine you chose is On-Device and the device could not process the note, or if Private Cloud Compute declined the content, the App does not switch to the cloud on its own: it first asks you on screen whether to use the cloud (Private Cloud Compute or GPT), and transmits the note only that one time, after you agree (see "On-Device" in Article 6-3).
 
 ### How Consent Works
 
@@ -196,31 +210,34 @@ Data is transmitted to OpenAI only when **both** of the following steps have tak
 "Prior consent" in this Article means both of these steps together. If either is missing, no data is transmitted.
 
 - **Text correction**: Runs when the user starts it directly on the transcript screen, or automatically right after analysis if the user turns on "Auto Text Correction" in Settings > Recording & Analysis (toggle default OFF).
-- **AI summary**: Data is transmitted only when the user directly selects and runs "Pro Summary" (or "Re-summarize › Pro") on the summary screen. It never runs automatically.
+- **AI summary**: Data is transmitted to OpenAI only when the user directly runs "Summarize" (or "Regenerate Summary" or "Summarize with Another Engine") on the summary screen and the engine for that summary is GPT (GPT is the default engine if no engine has been chosen in Settings, and this includes where an "Automatic" setting chosen before the app update falls through to GPT — see Article 6-3). It never runs automatically.
 - **Multilingual meeting translation**: Data is transmitted either automatically, if the user has turned on "Auto-Translate" in Settings (default OFF), or manually, when the user taps "Translate" on screen.
+- **Polish Note**: Data is transmitted to OpenAI only when the user directly runs "Polish Note" on a note and the engine for Polish Note is GPT (GPT is the default engine if no engine has been chosen in Settings). It never runs automatically.
 
 Before purchasing a Pro subscription, the subscription screen displays a notice describing the cloud AI features, the scope of data transmitted, and a link to this Privacy Policy. Users can review this notice and this Article before deciding whether to turn on the toggles or use the buttons described above.
 
 Transmitted text is deleted within 30 days of transmission under OpenAI's API policy and is not used for model training (see Articles 4 and 6).
 
-No data is transmitted to OpenAI until the user takes one of the actions above. Whether each feature (text correction, AI summary, multilingual translation) is enabled is managed **independently per feature**, and that state is stored only on the device (not synchronized to iCloud).
+No data is transmitted to OpenAI until the user takes one of the actions above. Whether each feature (text correction, AI summary, multilingual translation, Polish Note) is enabled is managed **independently per feature**, and that state is stored only on the device (not synchronized to iCloud).
 
 ### Withdrawal of Consent
 
 The user may withdraw consent in the following ways.
 
-- **Text correction**: Toggle off "AI Text Correction" in Settings > AI Features.
-- **AI summary**: Select **on-device summary** on the summary screen instead of Pro (cloud) summary.
+- **Text correction**: Toggle off "Auto Text Correction" in the App's Settings.
+- **AI summary**: Under "AI Engine" in Settings, change the voice-summary engine to **On-Device**. Later summaries are then processed only on this device and are not transmitted to OpenAI or Apple (if the on-device engine cannot be used, the App asks before sending anything to the cloud).
+- **Polish Note**: If you change the Polish Note engine to **On-Device** under "AI Engine" in Settings, Polish Note is thereafter processed only on this device and is not transmitted to OpenAI or Apple (on-device only handles adding checkboxes to to-do lines).
 - **Multilingual meeting translation**: Turn off "Auto-Translate" in Settings to stop automatic runs, and simply do not request a translation to prevent any data from being transmitted. Cached translations are deleted together with the source transcription when the transcription is deleted.
-- **Full withdrawal**: Cancel the Pro subscription — once canceled, all cloud AI features are deactivated, and no further data is transmitted to OpenAI.
+- **Full withdrawal**: Turn off "Cloud AI Consent" in the App's Settings (Article 6-6), or cancel the Pro subscription — all cloud AI features are deactivated, and no further data is transmitted to OpenAI.
 
 ### Cloud-Free Alternatives
 
-The App provides the following **on-device processing** as the default, allowing core functionality to be used without consenting to the cloud AI features above.
+The App provides the following **on-device processing**, allowing core functionality to be used without consenting to the cloud AI features above.
 
-- Speech-to-text (STT): WhisperKit (on-device processing)
-- Speaker diarization: FluidAudio (on-device processing for both real-time and post-processing)
-- AI summary: Apple Foundation Models (on-device processing, iOS 26.1+)
+- Speech-to-text (STT): on-device processing
+- Speaker diarization: on-device processing (both real-time and post-processing)
+- AI summary: Apple Foundation Models (on-device processing, iOS 26.1+) — if you choose "On-Device" under "AI Engine" in Settings, summaries are processed only on this device, and automatic domain detection (OpenAI) does not run either
+- Polish Note (Pro): if you choose "On-Device" as the Polish Note engine under "AI Engine" in Settings, processing takes place only on this device. The device model does not rewrite the note; it only picks the lines that are to-dos and adds a checkbox in front of them. The text of the note is not changed, nothing is sent off the device, and list and formatting polish is done only by the cloud engines (Private Cloud Compute and GPT)
 - Translation: Pro-exclusive feature; no OpenAI transmission if translation is not used
 
 ---
@@ -231,7 +248,8 @@ The Operator provides the following Pro feature built on Apple Inc.'s (United St
 
 | Feature | Transmitted Data | Recipient | Default State |
 |---------|-----------------|-----------|---------------|
-| AI summary (Pro) | Transcription text (STT, including speaker labels), the recording title the user has directly given it (auto-generated titles are excluded), domain tag, summary length/tone settings, language setting, recording date/time | Apple Inc. (United States) — Private Cloud Compute | **Inactive** — the default remains GPT; this option is used only when the user directly selects it in Settings |
+| AI summary (Pro) | Transcription text (STT, including speaker labels), the recording title the user has directly given it (auto-generated titles are excluded), domain tag, summary length/tone settings, language setting, recording date/time | Apple Inc. (United States) — Private Cloud Compute | **Disabled** — the default engine is GPT, and Private Cloud Compute is used only if the user chooses it under "AI Engine" in Settings. Even then, data is transmitted **only when the user directly runs a summary**, and nothing is transmitted without the separate consent (Article 6-6) |
+| Polish Note (Pro) | The note's title (first line) and body text, the titles of recording cards and note links in the body, the file names of file cards, and the text of links (excluding photo files, the contents of files, tables, code blocks, and math blocks, link addresses, calendar event information, audio files, and the contents of other recordings) | Apple Inc. (United States) — Private Cloud Compute | **Disabled** — the default engine is GPT, and Private Cloud Compute is used only if the user chooses it as the Polish Note engine under "AI Engine" in Settings. Even then, data is transmitted **only when the user directly runs Polish Note**, and nothing is transmitted without the cloud AI consent (Article 6-6) |
 
 **The data the Operator transmits does not include the following**: audio files, account identifiers (email, IDFA, etc.), device identifiers. The Operator has not independently verified whether the actual transport layer of the request to Apple carries any other information.
 
@@ -239,17 +257,22 @@ The Operator provides the following Pro feature built on Apple Inc.'s (United St
 
 ### How Consent Works
 
-In Settings > AI Models > "Summary AI," the user directly chooses one of the following three options.
+Under "AI Engine" in Settings, the user chooses the engine for **voice summaries** (AI summary) and the engine for **Polish Note** (the feature that polishes a note's text with AI) **separately**. The options that can be newly chosen are the following three — On-Device, Private Cloud Compute, and GPT — and any engine the device cannot use is not displayed. "Automatic" can no longer be newly chosen; it remains only for users who had already chosen "Automatic" before the app update (see "Automatic" below). This Article is written for voice summaries; the engine for Polish Note is likewise chosen separately on the same screen, with the same default-engine rule. What "On-Device" does in Polish Note, however, differs from voice summaries (see "On-Device" below).
 
-- **Automatic**: Tries Private Cloud Compute first, and falls back to GPT — **silently, without asking or notifying you in advance** — when it is unavailable (e.g., device/system ineligibility, usage limit reached, or the recording is long enough to require multiple calls). Because you chose "Automatic" without naming a specific engine, this GPT use (and any resulting usage deduction) is treated as within the scope of that choice. You can still confirm after the fact which engine actually produced a given summary — the summary screen shows a notice only when it was produced via Private Cloud Compute; the absence of that notice means it was produced via GPT.
-- **Private Cloud Compute**: Summarizes using Apple only. If unavailable, the App does not silently fall back to GPT; instead it explains the reason and asks the user to choose again.
-- **GPT**: Summarizes using OpenAI only, as before (see Article 6-2). This is the **default for all users, including existing users**.
+- **On-Device**: Processes only on this device (Apple Foundation Models). Nothing is transmitted externally and no cloud AI consent is needed. What it does differs by feature — for voice summaries, the on-device model writes the summary; **in Polish Note, the on-device model does not rewrite the note: it only picks the lines that are to-dos and adds a checkbox in front of those lines. The text of the note is not changed, and list and formatting polish is done only by Private Cloud Compute and GPT.** When on-device cannot be used (e.g., Apple Intelligence is turned off), when, in Polish Note, a note is too long for the device to process in one pass, or when the device's AI could not process the content, the App **still does not silently send anything to the cloud**. Where the cloud can process it instead, the App asks you on screen whether to use Private Cloud Compute (or GPT if that is not available); data is sent to the cloud only for that one time, and only if you agree. Even then, the separate consent under Article 6-6 is required.
+- **Private Cloud Compute**: Summarizes using Apple only. If unavailable, the App does not silently fall back to GPT; instead it explains the reason and asks you again whether to use GPT or another engine.
+- **GPT**: Summarizes using OpenAI only, as before (see Article 6-2). It is the **default engine** when no engine has been chosen in Settings.
+- **Automatic** (a setting that remains only for users who had already chosen "Automatic" before the app update): It can no longer be newly chosen, and if such a user chooses another engine, "Automatic" disappears from the list and cannot be chosen again. Because the engine choice for Polish Note is new in the app update in which this Policy takes effect, no user has "Automatic" stored for Polish Note. While this setting remains, it uses the first engine that is available, in the order **on-device → Private Cloud Compute → GPT**. If on-device is available, processing takes place only on this device, nothing is transmitted externally, and no cloud AI consent is needed. If on-device is not available (e.g., Apple Intelligence is turned off, or the device or language is unsupported), it tries Private Cloud Compute first, and when that is also unavailable (e.g., device/system ineligibility, usage limit reached, or the recording is long enough to require multiple calls) it falls back to GPT — **silently, without asking or notifying you in advance** (unlike when you have chosen another engine yourself, with this setting the App does not ask before moving on to another engine). Because you chose "Automatic" without naming a specific engine, this GPT use (and any resulting usage deduction) is treated as within the scope of that choice. Sending to the cloud (Private Cloud Compute or GPT) requires the separate consent under Article 6-6; without it, nothing is transmitted to either. You can still confirm after the fact which engine actually produced a given summary — the summary screen shows a notice when it was produced on-device and a different notice when it was produced via Private Cloud Compute; a Pro summary showing neither notice was produced via GPT.
 
-"Prior consent" in this Article means, **together**, both the separate consent for the processing of sensitive information under Article 6-6 **and** the user's direct act of selecting "Private Cloud Compute" (or "Automatic," which may fall back to it) on the screen described above. Without the separate consent, no data is transmitted even if this selection is made, and no data is transmitted to Apple before the user makes this selection either.
+**Default engine**: For each of voice summaries and Polish Note, where no engine has ever been chosen in Settings for it (no stored choice), the default engine is **GPT on all devices**. On-Device and Private Cloud Compute are used only if the user chooses them under "AI Engine" in Settings. This setting is stored per device and is not synchronized to iCloud.
+
+**Notice of changes to the engine settings (Policy version 1.6)**: The default engine is GPT, as it was up to version 1.5, and has not changed. What changes in the app update in which this Policy takes effect is the following — an On-Device option is added, the engines for voice summaries and for Polish Note are chosen separately, and "Automatic" can no longer be newly selected. The choice of a user who has already selected "Automatic" is kept as is; however, whereas up to version 1.5 "Automatic" tried Private Cloud Compute first, it now tries on-device first, as described under "Automatic" above (when on-device cannot be used, the order is Private Cloud Compute and then GPT, as before). You can change the engine at any time under "AI Engine" in Settings.
+
+"Prior consent" in this Article means, **together**, both the separate consent for the processing of sensitive information under Article 6-6 **and** the user's **direct act of running** a summary on the summary screen. The screen where you start a summary shows, in one line, which engine will process it under your settings (for example, "Summarizes with GPT", "Summarizes with Apple's Private Cloud Compute" or "Summarizes on this device"), and "Summarize with Another Engine" lets you choose a different engine directly for that one time only. Even if you have not chosen Private Cloud Compute yourself in Settings (including when an "Automatic" setting chosen before the app update falls through to it, or when you choose it directly for that one time under "Summarize with Another Engine"), data is transmitted to Apple only when both of these are in place. Without the separate consent, no data is transmitted even if a summary is run, and no data is transmitted to Apple before a summary is run. Polish Note likewise transmits data only when both the separate consent under Article 6-6 and the user's direct action are present.
 
 ### Relationship to Domain Detection
 
-The feature that automatically detects a summary's domain (see Article 6-2) works by transmitting the full transcript to OpenAI. **This automatic domain detection does not run for summaries processed via Private Cloud Compute** — if a domain has already been saved, that value is used; otherwise, Private Cloud Compute's own model follows its built-in instructions to infer the domain. Accordingly, the transcript of a summary processed via Private Cloud Compute is never transmitted to OpenAI.
+The feature that automatically detects a summary's domain (see Article 6-2) works by transmitting the full transcript to OpenAI. **This automatic domain detection does not run for summaries processed on-device or via Private Cloud Compute** — if a domain has already been saved, that value is used; otherwise, the model itself follows its built-in instructions to infer the domain. Accordingly, the transcript of a summary processed on-device or via Private Cloud Compute is never transmitted to OpenAI.
 
 ### Whether the Backend Is Involved
 
@@ -265,23 +288,24 @@ Apple has publicly stated that it does not retain the content of requests proces
 
 ### Withdrawal of Consent
 
-- Switching back to "GPT" or "Automatic" in Settings > AI Models > "Summary AI" stops future summaries from being sent to Private Cloud Compute.
+- Changing the voice-summary (or Polish Note) engine to "On-Device" or "GPT" under "AI Engine" in Settings stops that processing from being sent to Private Cloud Compute from then on. For a user who still has an "Automatic" setting chosen before the app update: because "Automatic" can use Private Cloud Compute when on-device is unavailable, choose "On-Device" or "GPT", or withdraw your cloud AI consent, to be certain nothing is sent. Once you choose another engine, "Automatic" disappears from the list and cannot be chosen again.
+- Withdrawing "Cloud AI Consent" in Settings (Article 6-6) stops all further transmission to Apple.
 - Canceling the Pro subscription deactivates all cloud summarization features, including this one.
 
 ### Cloud-Free Alternative
 
-Core functionality remains available via on-device summarization (Apple Foundation Models; see Article 6-2) without consenting to this feature.
+Core functionality remains available via on-device summarization (Apple Foundation Models; choose "On-Device" under "AI Engine" in Settings; see Article 6-2) without consenting to this feature. Polish Note is likewise available on-device (choose "On-Device" under "AI Engine" in Settings), within the scope of adding checkboxes to to-do lines on this device.
 
 ---
 
 ## Article 6-4. MCP Local Integration
 
-The Operator provides the following Pro feature ("MCP Local Integration") that lets another program the user runs directly on this Mac (the "Connected Program") query the user's own Cleio library and modify a limited set of items in it. This feature is available **only in the macOS version of Cleio**, and its default state is **inactive (OFF)**.
+The Operator provides the following Pro feature ("MCP Local Integration") that lets another program the user runs directly on this Mac (the "Connected Program") query the user's own Cleio library (recordings and notes) and modify a limited set of items in it. This feature is available **only in the macOS version of Cleio**, and its default state is **inactive (OFF)**.
 
 | | |
 |---|---|
-| Data made available | Recording list metadata (title, recording date/time, duration, status, folder, speaker count, domain), full transcript (per-segment speaker labels and start/end times), summary text (the version currently shown to the user), action item (to-do) list, folder list, linked calendar event details (event title, date/time, calendar name, and **attendee names**) |
-| Not made available | Audio files and their storage paths, account identifiers (e.g., email), device identifiers, **calendar attendees' email addresses and RSVP status** |
+| Data made available | Recording list metadata (title, recording date/time, duration, status, folder, speaker count, domain), full transcript (per-segment speaker labels and start/end times), summary text (the version currently shown to the user; any to-dos are included as a checklist within the summary text), **notes** (title, full body, folder, and created and last-edited times; the body is provided exactly as stored in markdown, so the titles and internal IDs of the recordings and notes inside the body's recording cards and note links, and the relative-path image links of photos, are provided along with it), folder list (including the number of recordings and notes per folder), linked calendar event details (event title, date/time, calendar name, and **attendee names**) |
+| Not made available | Audio files and their storage paths, photo files added to summaries and notes (only a relative-path image link remains in the text), account identifiers (e.g., email), device identifiers, **calendar attendees' email addresses and RSVP status** |
 | Recipient | Not the Operator or a processor selected by the Operator, but **a separate program running on this Mac that the user has chosen to connect themselves** |
 | Default state | **Inactive** (default OFF) — the user must turn it on directly in Settings |
 
@@ -289,15 +313,17 @@ The Operator provides the following Pro feature ("MCP Local Integration") that l
 
 **Note on titles**: The "title" above includes not only a title the user has directly given a recording, but, when none has been given, a calendar event's title shown via automatic matching, or the system's date-based default title — whatever title is currently displayed on screen is what goes out.
 
+**Note on notes**: A note is text the user wrote themselves, so its full body is made available exactly as stored, in markdown (a note's title is usually the first line of its body). Notes and recordings in the trash are not made available. The Connected Program can create notes, add to existing notes, and replace their whole body (see "How It Works" below), but there is no function to delete a note.
+
 **How this differs from Articles 6-2 and 6-3**: Those Articles describe processing relationships the Operator has established with named vendors (OpenAI, Apple). This feature is different — the Operator does not know, and does not choose, which program connects. Selecting a Connected Program and authorizing it by entering the access token is entirely the user's own act.
 
 ### How It Works
 
 Turning on "MCP Local Integration" in Settings opens a server that responds only to this Mac itself (the loopback address, 127.0.0.1). No other device on the same network can reach it. Connecting requires an access token this app generates and stores in the device's Keychain; the user must enter this token into the Connected Program themselves to complete the connection. The server runs only while the app is running and stops when the app quits.
 
-The Connected Program may request only four kinds of edits: renaming a recording, moving it to a folder, setting its domain, and toggling an action item's completion state. It cannot request any action that consumes Pro usage (credits), such as generating an AI summary, translating, or correcting text.
+The Connected Program may request only six kinds of edits. On recordings: renaming a recording, moving it to a folder, and setting its domain. On notes: creating a new note (optionally in a folder), adding to the end of an existing note, and replacing the whole body of an existing note. Putting a recording card or a link to another note in a note's body connects the note to that recording or note. Photos and files cannot be created through this channel, but if a whole-body replacement leaves out an existing photo's line, that photo is removed from the note and may be deleted afterward. A whole-body replacement is rejected if the note differs from the version the Connected Program last read, and a note that is open in this Mac's editor, or in the trash, is not changed. There is no function to delete a note or to edit summary text (including to-do check marks). It cannot request any action that consumes Pro usage (credits), such as generating an AI summary, translating, or correcting text.
 
-**Reach into the Reminders app**: If the Connected Program toggles the completion state of an action item the user has already exported to the Reminders app, that change is also applied to the corresponding item in the Reminders app (the same path as Reminders synchronization described in Article 2). This is the only case in which an edit made through this channel reaches outside the Cleio app, and it does not apply to items that have not been exported to Reminders.
+**Reach beyond the Cleio app**: The edits above are applied only to recording and note information inside Cleio and do not reach data in other apps such as Reminders or Calendar. They appear in Cleio immediately and, if a Pro subscriber has iCloud sync on, are passed on by normal sync to the user's own Cleio on their other devices.
 
 ### How Consent Works
 
@@ -343,7 +369,7 @@ The app the user chooses to capture may be a call or video conferencing app whos
 
 ### Where data is stored and processed
 
-Captured audio files, and the transcripts, speaker diarization results, and summaries generated from them, are by default stored and processed **only on this Mac**. **They are never transmitted to the Operator's servers, to OpenAI, or to Apple**, and audio files are stored and synced to the user's own Apple iCloud Drive only if a Pro subscriber has enabled iCloud sync (see Article 2). If the user directly enables, selects, or invokes text correction, GPT summarization, translation, or Private Cloud Compute summarization in Settings, the resulting text — and only that text — may be transmitted to OpenAI or Apple under Articles 6-2 and 6-3.
+Captured audio files, and the transcripts, speaker diarization results, and summaries generated from them, are stored and processed on this Mac. **They are never transmitted to the Operator's servers, to OpenAI, or to Apple**, and audio files are stored and synced to the user's own Apple iCloud Drive only if a Pro subscriber has enabled iCloud sync (see Article 2). If the user directly enables text correction or translation in Settings, or directly runs text correction, GPT summarization, translation, or Private Cloud Compute summarization on screen, the resulting text — and only that text — may be transmitted to OpenAI or Apple under Articles 6-2 and 6-3.
 
 ### Indicator while recording
 
@@ -378,13 +404,13 @@ Transcription text (STT) is a direct transcript of the conversation the user has
 
 The categories of sensitive information that may be included are: information concerning ideology or belief; joining or leaving a labor union or political party; political views; health; sex life; genetic information; criminal history; biometric information; and race or ethnicity.
 
-In particular, **AI summary determines a conversation's domain and extracts items suited to that domain**. Depending on what is discussed, the resulting summary may include sensitive content such as health, ideology, or political views. In addition, cloud AI features — including text correction and translation — transmit the full text of the transcription as is and do not separately filter out sensitive content.
+In particular, **AI summary determines a conversation's domain and extracts items suited to that domain**. Depending on what is discussed, the resulting summary may include sensitive content such as health, ideology, or political views. In addition, cloud AI features — including text correction and translation — transmit the full text of the transcription as is and do not separately filter out sensitive content. Notes, too, are text the user wrote, and may contain sensitive information such as health records or diary entries, or third-party information; the Operator does not screen them. When Polish Note is run with a cloud engine, the text of the note is transmitted as is.
 
 ### What the Consent Screen Discloses
 
 The consent screen is shown through either of the following paths.
 
-- When the user turns on Settings > AI Models > "Cloud AI Consent" in the app
+- When the user turns on "Cloud AI Consent" in the App's Settings
 - When the user selects "Agree" in the notice that appears upon invoking a cloud AI feature before consent has been given
 
 **Turning on the toggle in Settings does not by itself constitute consent** — the consent screen must always be shown. Likewise, features that run automatically without any user action, such as "Auto Text Correction" and "Automatic Translation," **cannot be turned on** without this consent. Attempting to turn one on beforehand shows a notice, and it is turned on only if consent is given on this screen. Any such feature that was already on is turned off when the app launches, and withdrawing consent turns it off as well.
@@ -393,27 +419,31 @@ The consent screen discloses the following.
 
 | Disclosed Item | Content |
 |---|---|
-| Purpose of processing | Summarization, text correction, multilingual translation (including domain detection for summarization) |
-| Data processed | The full text of the transcription, language settings, your term dictionary, recording titles, domain tags, and summary length and tone settings — **audio files are not transmitted** |
+| Purpose of processing | Summarization, text correction, multilingual translation, Polish Note (including domain detection for summarization) |
+| Data processed | The full text of the transcription, language settings, your term dictionary, recording titles, domain tags, and summary length and tone settings; for Polish Note, the note's title and body text and the titles, file names, and link text of cards — **audio files are not transmitted** |
 | Retention and use period | OpenAI: deleted within 30 days of transmission / Apple: per Apple's published statements, not retained after the request is processed (see Article 6-3, "Retention") |
 | International transfer | Recipients: OpenAI, Inc. and Apple Inc. / Country: United States / Timing and method: transferred over an encrypted connection when a cloud AI feature is invoked (Article 7) |
 | Right to refuse consent | You may refuse consent; refusing results only in the feature limitations described below |
 
 On the consent screen, the consent item is **not pre-selected**; the user must actively select it before the "Agree" button becomes enabled. To decline, the user may select **"Decline and Continue"** on the same screen; the rest of the app remains fully available in that case.
 
+### Application of Existing Consent to Polish Note
+
+Polish Note (Pro) is newly added in the app update in which this Policy takes effect. The consent to cloud AI use that a user gave before this Policy takes effect also applies to Polish Note, and the Operator does not ask for consent again for this feature. The consent screen shown after the Policy takes effect lists the text of notes among the data processed. Polish Note transmits data only when the user runs it directly, and consent can be withdrawn at any time. In other words, no separate additional consent step is provided for Polish Note: the existing cloud AI consent is applied to Polish Note as well, and notes have been added to the items disclosed on the consent screen.
+
 ### Voluntariness of Consent and Consequences of Refusal
 
-This consent is **optional**. Declining it does not affect the following features, which remain fully available — recording, transcription (STT), speaker diarization, and on-device AI summarization. Other Pro subscription benefits (iCloud sync, export, etc.) are not restricted either.
+This consent is **optional**. Declining it does not affect the following features, which remain fully available — recording, transcription (STT), speaker diarization, on-device AI summarization, and on-device Polish Note (adding checkboxes to to-do lines). Other Pro subscription benefits (iCloud sync, etc.) are not restricted either.
 
-Declining this consent restricts only the cloud AI features (text correction, AI summary, multilingual translation, and domain detection, including Private Cloud Compute summarization).
+Declining this consent restricts only the cloud AI features (text correction, AI summary, multilingual translation, Polish Note, and domain detection, including Private Cloud Compute summarization).
 
 ### Consent Records
 
-The Operator records the **time** consent was given and the **version of this Policy** in effect at that time, on the user's own device. This record is stored only on the user's own device (not synchronized via iCloud); the consent timestamp can be checked in Settings > AI Models > "Cloud AI Consent."
+The Operator records the **time** consent was given and the **version of this Policy** in effect at that time, on the user's own device. This record is stored only on the user's own device (not synchronized via iCloud); the consent timestamp can be checked under "Cloud AI Consent" in the App's Settings.
 
 ### Withdrawal of Consent
 
-Turning off the "Cloud AI Consent" toggle in Settings > AI Models immediately withdraws consent. Once withdrawn, cloud AI features stop and only on-device processing remains; no further data is transmitted to OpenAI or Apple.
+Turning off the "Cloud AI Consent" toggle in the App's Settings immediately withdraws consent. Once withdrawn, cloud AI features stop and only on-device processing remains; no further data is transmitted to OpenAI or Apple.
 
 Withdrawal is effective **only prospectively**. The retention or deletion of data already transmitted before withdrawal is governed by Articles 6-2 and 6-3 and by each processor's own policies.
 
@@ -425,14 +455,14 @@ Your personal information may be transferred to and processed in countries outsi
 
 | Recipient | Country | Data Transferred | Purpose | Timing and Method of Transfer | Recipient's Retention and Use Period | Legal Basis |
 |-----------|---------|-----------------|---------|-------------------------------|---------------------------------------|-------------|
-| OpenAI, Inc. | United States | Transcription text, summary input text, translation input text (only when the user enables or directly invokes the relevant Pro feature in Settings) | Text correction, GPT summarization, multilingual translation | Transmitted over an encrypted connection (HTTPS) at the time the relevant feature is invoked | Deleted within 30 days of transmission | Separate consent for sensitive information (Article 6-6) + the user directly enabling or invoking the feature (Article 6-2) |
+| OpenAI, Inc. | United States | Transcription text, summary input text, translation input text, and Polish Note input text (the note's title and body text and the titles, file names, and link text of cards) (only when the user enables or directly invokes the relevant Pro feature in Settings) | Text correction, GPT summarization, multilingual translation, Polish Note | Transmitted over an encrypted connection (HTTPS) at the time the relevant feature is invoked | Deleted within 30 days of transmission | Separate consent for sensitive information (Article 6-6) + the user directly enabling or invoking the feature (Article 6-2) |
 | Google LLC | United States | (a) Anonymized app usage events, crash logs, performance metrics; (b) Cloud Functions invocation logs (no personally identifying content) | Analytics, stability, and performance monitoring; backend infrastructure operation (OpenAI proxy, subscription verification, usage management) | Transmitted over an encrypted connection (HTTPS) at the time of app usage or feature invocation | Per the retention periods in Article 4 | Performance of service contract |
-| Apple Inc. | United States | Payment information, iCloud-synced data (Pro), Reminders (EventKit) data | Payment processing, cloud storage, two-way Reminders synchronization | Transmitted over Apple's own encrypted channel at the time of payment or sync | Per Apple's policy (until the user deletes it from iCloud) | Performance of service contract |
-| Apple Inc. | United States | Transcription text, summary input text (including any recording title the user has directly given it), domain tag, and summary length/tone/language settings (only when the user directly selects Private Cloud Compute summarization in Settings) | Private Cloud Compute AI summarization | Transmitted directly from the device to Apple's servers over an encrypted connection at the time of summarization (not passing through the Operator's backend) | Per Apple's published statements, not retained after the request is processed (see Article 6-3, "Retention") | Separate consent for sensitive information (Article 6-6) + the user directly selecting the feature (Article 6-3) |
+| Apple Inc. | United States | Payment information, iCloud-synced data (Pro) | Payment processing, cloud storage | Transmitted over Apple's own encrypted channel at the time of payment or sync | Per Apple's policy (until the user deletes it from iCloud) | Performance of service contract |
+| Apple Inc. | United States | Transcription text, Polish Note input text (the note's title and body text and the titles, file names, and link text of cards), summary input text (including any recording title the user has directly given it), domain tag, and summary length/tone/language settings (only when the "AI Engine" setting is Private Cloud Compute — including where an "Automatic" setting chosen before the app update falls through to it — and the user directly runs a summary or Polish Note) | Private Cloud Compute AI summarization and Polish Note | Transmitted directly from the device to Apple's servers over an encrypted connection at the time of summarization or Polish Note (not passing through the Operator's backend) | Per Apple's published statements, not retained after the request is processed (see Article 6-3, "Retention") | Separate consent for sensitive information (Article 6-6) + the user directly running a summary or Polish Note (Article 6-3) |
 
 These transfers are conducted in compliance with Article 28-8 of the Korean Personal Information Protection Act (PIPA) regarding cross-border data transfers.
 
-**Method and Procedure for Refusing the Transfer**: You may refuse international transfers of your data. Transfer of transcription text to OpenAI and Apple can be refused by declining the separate consent under Article 6-6 (selecting "Decline and Continue" on the consent screen) or, if you have already consented, by turning off "Cloud AI Consent" in Settings > AI Models, which stops the transfer immediately. Refusing does not affect your continued use of recording, transcription, speaker diarization, or on-device summarization. Transfer to Apple in connection with payment, iCloud sync, and Reminders can be refused by not using the corresponding feature (subscription, iCloud sync, or Reminders integration), and transfer to Google (analytics, crash logs, and performance metrics) can be stopped by sending a request to kdwara@icloud.com — the App does not currently provide an in-app toggle to disable these individually (Article 13). In those cases, the refused feature (subscription payment, iCloud sync, or Reminders integration) is not available.
+**Method and Procedure for Refusing the Transfer**: You may refuse international transfers of your data. Transfer of transcription text and note text to OpenAI and Apple can be refused by declining the separate consent under Article 6-6 (selecting "Decline and Continue" on the consent screen) or, if you have already consented, by turning off "Cloud AI Consent" in the App's Settings, which stops the transfer immediately. Refusing does not affect your continued use of recording, transcription, speaker diarization, or on-device summarization. Transfer to Apple in connection with payment and iCloud sync can be refused by not using the corresponding feature (subscription or iCloud sync), and transfer to Google (analytics, crash logs, and performance metrics) can be stopped by sending a request to kdwara@icloud.com — the App does not currently provide an in-app toggle to disable these individually (Article 13). In those cases, the refused feature (subscription payment or iCloud sync) is not available.
 
 **Recipient Contact Information**: OpenAI, Inc. — privacy@openai.com / Apple Inc. — https://www.apple.com/legal/privacy/contact/ / Google LLC — https://support.google.com/policies/contact/general_privacy_form
 
@@ -449,13 +479,12 @@ You (or your legal representative) may exercise the following rights.
 
 **How to exercise your rights**
 
-- You can delete recordings and associated data directly within the App.
-- You can revoke permissions such as microphone, Calendar, Reminders, and (on macOS) Screen & System Audio Recording at any time through your device settings.
+- You can delete recordings, notes, and associated data directly within the App.
+- You can revoke permissions such as microphone, Calendar, and (on macOS) Screen & System Audio Recording at any time through your device settings.
 - You may submit a request by email to kdwara@icloud.com. The Operator will process the request without undue delay and no later than **10 days** from receipt.
-- Withdrawal of consent for cloud AI features (text correction, AI summary, multilingual translation) is described in the **Withdrawal of Consent** section of **Article 6-2**; withdrawal of consent for Private Cloud Compute summarization is described in the **Withdrawal of Consent** section of **Article 6-3**.
+- Withdrawal of consent for cloud AI features (text correction, AI summary, multilingual translation, Polish Note) is described in the **Withdrawal of Consent** section of **Article 6-2**; withdrawal of consent for Private Cloud Compute summarization and Polish Note is described in the **Withdrawal of Consent** section of **Article 6-3**.
 - Withdrawal of consent for MCP Local Integration is described in the **Withdrawal of Consent** section of **Article 6-4**.
 - Withdrawal of consent for System Audio Capture is described in the **Withdrawal of Consent** section of **Article 6-5**.
-- Two-way Reminders synchronization applies only to action items you have chosen to keep in Reminders via [Sync Reminders] on the summary screen. Revoking the Reminders permission in your device settings stops all synchronization; deleting an individual item in the Reminders app stops synchronization for that item only.
 
 During the period in which a correction or deletion request is being processed, the Operator will not use or disclose the relevant personal information.
 
@@ -467,7 +496,7 @@ Personal information for which the purpose of collection has been fulfilled is d
 
 **Destruction methods**
 
-- **Local device data**: Users may delete recordings and associated data directly within the App. Uninstalling the App removes all locally stored data (SwiftData, UserDefaults).
+- **Local device data**: Users may delete recordings, notes, and associated data directly within the App. Uninstalling the App removes all locally stored data (SwiftData, UserDefaults).
 - **iCloud data (Pro)**: Deleted when the user deletes data within the App or disables iCloud sync. Users may also delete data directly from their device's iCloud settings.
 - **Electronic files**: Deleted using methods that make recovery impossible (secure deletion).
 
@@ -493,13 +522,11 @@ Cleio requests the following device permissions.
 |------------|---------|----------|
 | Microphone | Audio recording | Required |
 | Calendar (EventKit) | Automatic matching of recordings with Calendar events | Optional — if declined, recording/transcription/summarization features continue to work normally; only the Calendar automatic matching feature is disabled |
-| Reminders (EventKit) | Two-way action item synchronization between the App and the Reminders app | Optional — if declined, transcription/summarization features continue to work; only the Reminders sync feature is disabled |
 | Screen & System Audio Recording (macOS, TCC) | Capturing the audio of another app the user selects (Pro, System Audio Capture) | Optional — if declined, core functionality including microphone recording continues to work normally; only System Audio Capture is disabled |
 
 - Microphone permission is required for the App's core recording functionality. The App cannot function without microphone access.
 - Speech-to-text (STT) is processed entirely on-device and does not require a separate speech recognition permission.
 - Calendar permission is used only for matching recordings with Calendar events. Event data is read on-device only and is never transmitted to the Operator's servers (for Pro subscribers, the matching metadata syncs only to the user's own Apple iCloud). Core functionality of the App continues to work without it.
-- The Reminders permission is used only to sync action items with the Reminders app (adding, editing, and deleting). Core functionality of the App continues to work without it.
 - The Screen & System Audio Recording permission is needed only to use System Audio Capture (Pro) on macOS. Core functionality of the App, including microphone recording, continues to work without it. See Article 6-5 for details.
 - Permissions can be managed through your device's Settings at any time.
 
@@ -523,17 +550,17 @@ The Operator implements the following technical and administrative safeguards to
 
 **Technical Safeguards**
 
-- **On-Device Processing Prioritized**: Core features (speech-to-text transcription, real-time speaker diarization, on-device AI summarization) operate entirely on the user's device. The on-device AI summarization uses Apple's Foundation Models framework and does not communicate with any external servers, including Apple's servers. Separately, if a Pro subscriber directly selects **Private Cloud Compute** as the summarization engine in Settings, transcription text is transmitted to Apple's servers for processing (see Article 6-3) — this occurs only by the user's explicit choice and is an exception to the on-device processing principle above. Unless the user uses any Pro cloud feature (text correction, GPT summary, translation, or Private Cloud Compute summarization), recordings, transcripts, and summary content are not transmitted to the Operator's servers, to OpenAI, or to Apple. However, Firebase data collected for app usage statistics and error diagnostics is transmitted regardless of subscription tier (see Article 2 and Article 10).
+- **On-Device Processing Prioritized**: Speech-to-text transcription, and the Pro features of real-time speaker diarization and on-device AI summarization, are by default processed on the user's device. The on-device AI summarization and the on-device Polish Note (which only adds checkboxes to to-do lines) use Apple's Foundation Models framework and do not communicate with any external servers, including Apple's servers. Separately, if a Pro subscriber who has given the separate consent under Article 6-6 directly runs a summary or Polish Note via **Private Cloud Compute** (including where the user chose it in Settings or under "Summarize with Another Engine", and where an "Automatic" setting chosen before the app update falls through to it), transcription text (or, for Polish Note, the text of a note) is transmitted to Apple's servers for processing (see Article 6-3) — this occurs only with the user's separate consent and direct action and is an exception to the on-device processing principle above. Unless the user uses any Pro cloud feature (text correction, GPT summary, translation, Polish Note, or Private Cloud Compute summarization), recordings, transcripts, summary content, and notes are not transmitted to the Operator's servers, to OpenAI, or to Apple. However, Firebase data collected for app usage statistics and error diagnostics is transmitted regardless of subscription tier (see Article 2 and Article 10).
 - **Encryption in Transit**: All data transmitted to external services (OpenAI, Firebase Cloud Functions, Apple) uses HTTPS/TLS encryption.
 - **Encryption at Rest**: Data stored on the device is protected by iOS device encryption. iCloud data is protected by Apple's encryption standards.
-- **Minimal Data Transmission**: Only the minimum data necessary for Pro features (text only) is transmitted to OpenAI or, when selected by the user, to Private Cloud Compute. Audio files are never transmitted to OpenAI or Apple.
+- **Minimal Data Transmission**: Only the minimum data necessary for Pro features (text only) is transmitted to OpenAI or Private Cloud Compute. Audio files are never transmitted to OpenAI or Apple. In Polish Note as well, photo files and the contents of files, tables, code blocks, and math blocks are not transmitted.
 - **MCP Local Integration Security (Pro, User's Choice)**: Even when this feature is on, the server responds only to this Mac itself (loopback address, 127.0.0.1), and no other device on the same network can reach it. Access requires a token stored in the device's Keychain (device-local, not synced via iCloud), and the server runs only while the app is running.
 - **System Audio Capture Security (Pro, macOS Only)**: Captured audio follows the same local storage and processing path as microphone recordings, and a persistent visual indicator is shown in the menu bar and the recording screen while capture is in progress (see Article 6-5).
 - **Backend Infrastructure (Firebase Cloud Functions)**: The Operator operates Google Firebase Cloud Functions (Seoul region — asia-northeast3, project `cleio-prod`) for the following purposes.
   - OpenAI API proxy (API key protection and usage management)
   - Subscription verification (Apple StoreKit JWS signature validation)
   - Usage limit management and usage logging
-  - This infrastructure is invoked only for transcription/summary/translation requests, and original media such as audio files are never transmitted to it.
+  - This infrastructure is invoked only for transcription/summary/translation/Polish Note (GPT) requests, and original media such as audio files are never transmitted to it.
   - Private Cloud Compute summarization (Article 6-3) does not pass through this backend; it is transmitted directly from the user's device to Apple's servers.
 
 **Administrative Safeguards**
@@ -602,12 +629,12 @@ This Article applies where the user resides in the **European Economic Area (EEA
 
 | Processing Activity | Legal Basis |
 |---------|---------|
-| Recording, transcription (STT), speaker diarization, and on-device summarization — processed only on this device | Performance of a contract (GDPR Article 6(1)(b)) |
-| iCloud sync, Reminders/Calendar integration, subscription payment | Performance of a contract (GDPR Article 6(1)(b)) |
-| **Cloud AI features** (text correction, AI summary, multilingual translation, and domain detection, including Private Cloud Compute summarization) — transcription text may include **sensitive information (a special category under the GDPR)** | **Explicit consent (GDPR Article 9(2)(a))** — separate consent under Article 6-6 |
+| Recording, transcription (STT), speaker diarization, on-device summarization, and notes — processing that does not use cloud AI | Performance of a contract (GDPR Article 6(1)(b)) |
+| iCloud sync, Calendar integration, subscription payment | Performance of a contract (GDPR Article 6(1)(b)) |
+| **Cloud AI features** (text correction, AI summary, multilingual translation, Polish Note, and domain detection, including Private Cloud Compute summarization) — transcription text and notes may include **sensitive information (a special category under the GDPR)** | **Explicit consent (GDPR Article 9(2)(a))** — separate consent under Article 6-6 |
 | App usage events, crash logs, and performance metrics (anonymized) | Legitimate interests (GDPR Article 6(1)(f)) — service stability and quality improvement |
 
-This consent is **a single consent covering both OpenAI and Apple**; you cannot selectively decline one of the two recipients. However, whether each feature actually runs is managed separately through per-feature settings (Auto Text Correction and Auto-Translate default to OFF; summarization always runs only when you directly invoke it).
+This consent is **a single consent covering both OpenAI and Apple**; you cannot selectively decline one of the two recipients. However, whether each feature actually runs is managed separately through per-feature settings (Auto Text Correction and Auto-Translate default to OFF; summarization and Polish Note always run only when you directly invoke them).
 
 Cloud AI features **do not run without explicit consent.** This consent is optional; declining it does not affect recording, transcription, speaker diarization, or on-device summarization (Article 6-6).
 
@@ -619,15 +646,15 @@ Users may exercise the following rights. For users to whom this Article applies,
 |------|------|---------|
 | Right of access | GDPR Article 15 | You can view your stored data directly within the App. For anything else, please submit a request by email |
 | Right to rectification | GDPR Article 16 | You can correct it directly within the App |
-| Right to erasure ("right to be forgotten") | GDPR Article 17 | You can delete recordings, summaries, and related data directly within the App. Deleting the App also deletes the data stored on your device |
+| Right to erasure ("right to be forgotten") | GDPR Article 17 | You can delete recordings, summaries, notes, and related data directly within the App. Deleting the App also deletes the data stored on your device |
 | Right to restriction of processing | GDPR Article 18 | Please submit a request by email |
-| **Right to data portability** | GDPR Article 20 | Summaries can be downloaded directly using the App's **Export (Markdown)** feature — PDF is an additional format provided for convenient viewing; Markdown is the reference format for fulfilling this right. For any other data, please submit a request by email |
+| **Right to data portability** | GDPR Article 20 | Summaries and notes can be downloaded directly using the App's **Export (Markdown)** feature — PDF is an additional format provided for convenient viewing; Markdown is the reference format for fulfilling this right. For any other data, please submit a request by email |
 | Right to object | GDPR Article 21 | To object to analytics collection (Firebase Analytics), crash logs, or performance metrics, please submit a request by email — the App does not currently provide an in-app toggle to disable these individually (Article 10) |
-| Right to withdraw consent | GDPR Article 7(3) | Turning off Settings > AI Models > "Cloud AI Consent" in the App withdraws consent immediately. **Withdrawal is effective only prospectively** |
+| Right to withdraw consent | GDPR Article 7(3) | Turning off "Cloud AI Consent" in the App's Settings withdraws consent immediately. **Withdrawal is effective only prospectively** |
 
 The Operator will process your request within **one month** of receipt. Where a request is complex or numerous, this period may be extended by up to two months, and the Operator will inform you of the reason. Exercising these rights is **free of charge** (except for manifestly unfounded or excessive, repetitive requests).
 
-**The Operator does not hold most of this data.** Recordings, transcriptions, and summaries are stored on your device (and, if you have turned on iCloud sync, in your own Apple iCloud) — not on the Operator's servers (Article 13). Accordingly, a substantial portion of access and erasure requests can be handled directly and immediately by you within the App.
+**The Operator does not hold most of this data.** Recordings, transcriptions, summaries, and notes are stored on your device (and, if you have turned on iCloud sync, in your own Apple iCloud) — not on the Operator's servers (Article 13). Accordingly, a substantial portion of access and erasure requests can be handled directly and immediately by you within the App.
 
 ### Automated Decision-Making (GDPR Article 22)
 
